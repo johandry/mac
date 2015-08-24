@@ -9,7 +9,7 @@
 #
 # Description: This script is to be imported from other script, not to be executed from command line. It have functions and variables usefull for any shell script.
 #
-# Report Issues or create Pull Requests in http://github.com/johandry/vaio_ubuntu_setup/
+# Report Issues or create Pull Requests in http://github.com/johandry/
 #=======================================================================================================
 
 SCRIPT_DIR="$( cd "$( dirname "$0" )" && pwd )"
@@ -21,9 +21,9 @@ log () {
   log="$(date +'%x - %X')\t[${1}]\t${2}\n"
   if [[ "${3}" == "ERROR" || "${3}" == "WARN" || "${3}" == "DBUG" ]]
     then
-    echo -ne $msg >&2
+    echo -ne "$msg" >&2
   else # OK || INFO
-    echo -ne $msg
+    echo -ne "$msg"
   fi
   echo -ne $log >> "${LOG_FILE}"
 }
