@@ -13,6 +13,7 @@ create_dir 'Local bin' "$HOME/bin"
 
 copy_file 'Common script' "${SETUP_DIR}/files/common.sh" "$HOME/bin/common.sh"
 
+
 echo
 echo "App Store Installs"
 echo
@@ -42,6 +43,10 @@ install 'Homebrew'          '/usr/local/bin/brew' 'ruby -e "$(curl -fsSL https:/
 install 'Wget'              '/usr/local/bin/wget' 'brew install wget'
 install 'Brew Cask'         '/usr/local/bin/brew-cask' 'brew install caskroom/cask/brew-cask'
 install 'Oh-My-Zsh'         "$HOME/.oh-my-zsh/oh-my-zsh.sh" 'curl -L https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh | sh'
+
+create_dir 'Oh-My-Zsh Custom Themes Directory' "$HOME/.oh-my-zsh/custom/themes"
+copy_file 'Oh-My-Zsh Custom Theme ' "${SETUP_DIR}/files/af-magic-clean.zsh-theme" "$HOME/.oh-my-zsh/custom/themes/af-magic-clean.zsh-theme"
+
 # Cloud Storage
 install 'Dropbox'           "$HOME/Applications/Dropbox.app/Contents/MacOS/Dropbox" 'brew-cask install dropbox'
 install 'Box Sync'          "$HOME/Applications/Box Sync.app/Contents/MacOS/Box Sync" 'brew-cask install box-sync'        

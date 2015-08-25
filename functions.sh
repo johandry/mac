@@ -58,7 +58,14 @@ copy_file() {
   dest=$3
 
   [[ ! -e "${dest}" || -n $(diff "${file}" "${dest}") ]] && cp "${file}" "${dest}"
-  [[   -e "${dest}" ]] && echo -e "${name}\t\t[OK]" || echo -e "${name}\t\t[ERROR]"
+  if [[   -e "${dest}" ]]
+    then
+    echo -e "${name}\t\t[OK]"
+    return 0
+  else
+    echo -e "${name}\t\t[ERROR]"
+    return 1
+  fi
 }
 
 install_sublime_text_3() {
