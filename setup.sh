@@ -13,7 +13,6 @@ create_dir 'Local bin' "$HOME/bin"
 
 copy_file 'Common script' "${SETUP_DIR}/files/common.sh" "$HOME/bin/common.sh"
 
-
 echo
 echo "App Store Installs"
 echo
