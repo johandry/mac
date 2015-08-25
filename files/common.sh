@@ -17,7 +17,7 @@ SCRIPT_NAME="$( basename "$0" )"
 LOG_FILE=/tmp/${SCRIPT_NAME%.*}.log
 
 log () {
-  msg="\e[${3};1m[${1}]\e[0m\t${2}\n"
+  msg="\x1B[${3};1m[${1}]\x1B[0m\t${2}\n"
   log="$(date +'%x - %X')\t[${1}]\t${2}\n"
   if [[ "${3}" == "ERROR" || "${3}" == "WARN" || "${3}" == "DBUG" ]]
     then

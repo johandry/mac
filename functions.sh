@@ -2,7 +2,7 @@ check_app(){
   app=$1
   file=$2
 
-  print_msg="echo -e ${app}\t\t[OK]"
+  print_msg="ok ${app}"
   [[ "$3" == "--quiet" ]] && print_msg=""
 
   [[ -e ${file} ]] && ${print_msg}  && return 0
@@ -18,12 +18,12 @@ install() {
   check_app "${app}" "${file}" --quiet
   if [[ $? -eq 1 ]]
     then
-    echo "Installing ${app}"
+    info "Installing ${app}"
     eval "${install}"
   fi
 
   check_app "${app}" "${file}" 
-  [[ $? -eq 1 ]] && echo -e "${app}\t\t[ERROR]" && return 1
+  [[ $? -eq 1 ]] && error "${app}" && return 1
   return 0
 }
 
@@ -36,7 +36,7 @@ install_app_store() {
   check_app "${app}" "${file}" --quiet
   if [[ $? -eq 1 ]]
     then
-    echo "Install ${app}"
+    info "Install ${app}"
     open macappstore://${url}
     read -p "Press [Enter] key when it is ready ..."
     [[ -n "${post_action}" ]] && eval "${post_action}"
@@ -49,7 +49,7 @@ create_dir() {
   dir=$2
 
   [[ ! -d "${dir}" ]] && mkdir -p "${dir}"
-  [[   -d "${dir}" ]] && echo -e "$name\t\t[OK]" || echo -e "$name\t\t[ERROR]"
+  [[   -d "${dir}" ]] && ok "$name" || error "$name"
 }
 
 copy_file() {
@@ -60,10 +60,10 @@ copy_file() {
   [[ ! -e "${dest}" || -n $(diff "${file}" "${dest}") ]] && cp "${file}" "${dest}"
   if [[   -e "${dest}" ]]
     then
-    echo -e "${name}\t\t[OK]"
+    ok "${name}"
     return 0
   else
-    echo -e "${name}\t\t[ERROR]"
+    error "${name}"
     return 1
   fi
 }
