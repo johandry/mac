@@ -56,6 +56,7 @@ install 'VLC'               "$HOME/Applications/VLC.app/Contents/MacOS/VLC" 'bre
 install 'Spotify'           "$HOME/Applications/Spotify.app/Contents/MacOS/Spotify" 'brew-cask install spotify'
 # Chat
 install 'Skype'             "$HOME/Applications/Skype.app/Contents/MacOS/Skype" 'brew-cask install skype'
+install 'Colloquy'          "$HOME/Applications/Colloquy.app/Contents/MacOS/Colloquy" 'brew-cask install colloquy'
 # File Management
 install 'Transmission'      "$HOME/Applications/Transmission.app/Contents/MacOS/Transmission" 'brew-cask install transmission'
 install 'UnRarX'            "$HOME/Applications/UnRarX.app/Contents/MacOS/UnRarX" 'brew-cask install unrarx'
