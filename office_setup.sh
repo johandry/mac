@@ -50,6 +50,7 @@ install 'Docker Tool Box'   "/Applications/Docker/Kitematic (Beta).app/Contents/
 install 'GitHub Desktop'    '/usr/local/bin/github' 'brew-cask install github-desktop'
 # Browsers
 install 'Firefox'           "$HOME/Applications/Firefox.app/Contents/MacOS/firefox" 'brew-cask install firefox'
+install 'TorBrowser'        "$HOME/Applications/TorBrowser.app/Contents/MacOS/firefox" 'brew-cask install torbrowser'
 # Movies
 install 'VLC'               "$HOME/Applications/VLC.app/Contents/MacOS/VLC" 'brew-cask install vlc'
 # Music
