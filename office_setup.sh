@@ -48,6 +48,7 @@ install 'Vagrant'           "/usr/local/bin/vagrant" 'brew-cask install vagrant'
 install 'Packer'            "/usr/local/bin/packer" 'brew-cask install packer'
 install 'Docker Tool Box'   "/Applications/Docker/Kitematic (Beta).app/Contents/MacOS/Electron" 'brew-cask install dockertoolbox'
 install 'GitHub Desktop'    '/usr/local/bin/github' 'brew-cask install github-desktop'
+install 'MacDown'           "$HOME/Applications/MacDown.app/Contents/MacOS/MacDown" 'brew-cask install macdown'
 # Browsers
 install 'Firefox'           "$HOME/Applications/Firefox.app/Contents/MacOS/firefox" 'brew-cask install firefox'
 install 'TorBrowser'        "$HOME/Applications/TorBrowser.app/Contents/MacOS/firefox" 'brew-cask install torbrowser'
