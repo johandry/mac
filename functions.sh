@@ -10,9 +10,26 @@ check_app(){
 }
 
 install() {
+  install_type="$(eval echo "\${$1[0]}")"
+  app="$(eval echo "\${$1[1]}")"
+  file="$(eval echo "\${$1[2]}")"
+  install_arg="$(eval echo "\${$1[3]}")"
+  post_action="$(eval echo "\${$1[4]}")"
+
+  [[ ${install_type} == "app_store" ]] && install_app_store "${app}" "${file}" "${install_arg}" "${post_action}"
+  [[ ${install_type} == "cmd" ]]       && install_cmd "${app}" "${file}" "${install_arg}" "${post_action}"
+}
+
+install_cmd() {
   app=$1
   file=$2
   install=$3
+
+  # echo $app
+  # echo $file
+  # echo $install
+  # echo
+  # return
 
 
   check_app "${app}" "${file}" --quiet
@@ -32,6 +49,13 @@ install_app_store() {
   file=$2
   url=$3
   post_action=$4
+
+  # echo $app
+  # echo $file
+  # echo $url
+  # echo $post_action
+  # echo
+  # return
 
   check_app "${app}" "${file}" --quiet
   if [[ $? -eq 1 ]]
