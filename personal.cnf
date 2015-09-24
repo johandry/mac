@@ -1,0 +1,24 @@
+declare -a applications=(
+# Development
+  XCode OS_X_Server 
+# Office  
+  Keynote Numbers Pages HP_Easy_Scan MindNode_2 Money
+# Base
+  Homebrew Wget Brew Cask Oh_My_Zsh
+# Cloud Storage
+  Dropbox Box_Sync OneDrive
+# DevOps Tools
+  Virtual_Box Vagrant Packer Docker_Tool_Box GitHub_Desktop MacDown
+# Browsers
+  Firefox TorBrowser
+# Movies
+  HandBrake HandBrake_CLI Subler Subler_CLI VLC MakeMKV MKV_Tools iMovie
+# Music
+  Spotify GarageBand
+# Social
+  Colloquy Skype Twitter
+# File Management
+  Transmission UnRarX
+# Miscellaneous 
+  Caffeine OnePassword
+)

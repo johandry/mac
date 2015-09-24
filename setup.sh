@@ -1,63 +1,48 @@
 #!/bin/bash
 
+#=======================================================================================================
+# Author: Johandry Amador <johandry@gmail.com>
+# Title: My Mac provisioning 
+#
+# Usage: {script_name} [-h | configuration]
+#
+# Options:
+#     -h, --help    Display this help message. bash {script_name} -h
+#     configuration Configuration to load to provisioning this Mac. If not provided will use the hostname
+#
+# Description: This script is to provisioning or install a applications in a Mac. The applications to install are in configuration files. 
+#              When there is a new application, it has to be added in config.sh then in the configuration file where it will be installed.
+#
+# Report Issues or create Pull Requests in http://github.com/johandry/
+#=======================================================================================================
+
+
 declare -r SETUP_DIR="$( cd "$( dirname "$0" )" && pwd )"
 source "${SETUP_DIR}/files/common.sh"
 source "${SETUP_DIR}/functions.sh"
 source "${SETUP_DIR}/config.sh"  
 
-declare -a personal=(
-# Development
-  XCode OS_X_Server 
-# Office  
-  Keynote Numbers Pages HP_Easy_Scan MindNode_2 Money
-# Base
-  Homebrew Wget Brew Cask Oh_My_Zsh
-# Cloud Storage
-  Dropbox Box_Sync OneDrive
-# DevOps Tools
-  Virtual_Box Vagrant Packer Docker_Tool_Box GitHub_Desktop MacDown
-# Browsers
-  Firefox TorBrowser
-# Movies
-  HandBrake HandBrake_CLI Subler Subler_CLI VLC MakeMKV MKV_Tools iMovie
-# Music
-  Spotify GarageBand
-# Social
-  Colloquy Skype Twitter
-# File Management
-  Transmission UnRarX
-# Miscellaneous 
-  Caffeine OnePassword
-)
+if [[ -z $1 ]]
+  then
+  if [[ -e "${SETUP_DIR}/$HOSTNAME.cnf" ]]
+    then
+    info "Loading $HOSTNAME.cnf configuration"
+    source "${SETUP_DIR}/$HOSTNAME.cnf" 
+  else
+    error "The configuration file for this host ($HOSTNAME) was not found. Provide a configuration file to load."
+    exit 1
+  fi
+else
+  if [[ -e "${SETUP_DIR}/$1.cnf"  ]]
+    then 
+    info "Loading $1.cnf configuration"
+    source "${SETUP_DIR}/$1.cnf" 
+  else
+    error "Configuration file for $1 was not found. Enter a valid configuration ($(ls ${SETUP_DIR}/*.cnf | sed 's/\(.*\)\.cnf/\1/' | tr '\n' ',' | sed 's/,/, /'))"
+    exit 1
+  fi
+fi
 
-declare -a office=( 
-# Development
-  XCode 
-# Office  
-  Keynote Numbers Pages MindNode_2 Money
-# Base
-  Homebrew Wget Brew Cask Oh_My_Zsh
-# Cloud Storage
-  Dropbox Box_Sync OneDrive
-# DevOps Tools
-  Virtual_Box Vagrant Packer Docker_Tool_Box GitHub_Desktop MacDown
-# Browsers
-  Firefox TorBrowser
-# Movies
-  VLC
-# Music
-  Spotify
-# Social
-  Colloquy Skype Twitter
-# File Management
-  Transmission UnRarX
-# Miscellaneous 
-  Caffeine OnePassword
-)
-
-[[ -z $1 ]] && error "Missing parameter. Is this your personal or office Mac?" && exit 1
-[[ $1 == "personal" ]] && applications="${personal[@]}"
-[[ $1 == "office" ]]   && applications="${office[@]}"
 
 echo
 echo "Directories and files"
@@ -72,7 +57,7 @@ echo
 echo "Applications"
 echo
 
-for app in ${applications}
+for app in ${applications[@]}
 do
   install $app
 done

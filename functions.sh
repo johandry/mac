@@ -25,13 +25,6 @@ install_cmd() {
   file=$2
   install=$3
 
-  # echo $app
-  # echo $file
-  # echo $install
-  # echo
-  # return
-
-
   check_app "${app}" "${file}" --quiet
   if [[ $? -eq 1 ]]
     then
@@ -49,13 +42,6 @@ install_app_store() {
   file=$2
   url=$3
   post_action=$4
-
-  # echo $app
-  # echo $file
-  # echo $url
-  # echo $post_action
-  # echo
-  # return
 
   check_app "${app}" "${file}" --quiet
   if [[ $? -eq 1 ]]
