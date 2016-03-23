@@ -31,6 +31,7 @@ Packer=(      cmd 'Packer'            "/usr/local/bin/packer" 'brew-cask install
 Docker_Tool_Box=( cmd 'Docker Tool Box'   "/Applications/Docker/Kitematic (Beta).app/Contents/MacOS/Electron" 'brew-cask install dockertoolbox' )
 GitHub_Desktop=(  cmd 'GitHub Desktop'    '/usr/local/bin/github' 'brew-cask install github-desktop' )
 MacDown=(     cmd 'MacDown'           "$HOME/Applications/MacDown.app/Contents/MacOS/MacDown" 'brew-cask install macdown' )
+MacDown=(     cmd 'MacDown'           "$HOME/Applications/MacDown.app/Contents/MacOS/MacDown" 'brew-cask install macdown' )
 # Browsers
 Firefox=(     cmd 'Firefox'           "$HOME/Applications/Firefox.app/Contents/MacOS/firefox" 'brew-cask install firefox' )
 TorBrowser=(  cmd 'TorBrowser'        "$HOME/Applications/TorBrowser.app/Contents/MacOS/firefox" 'brew-cask install torbrowser' )
