@@ -1,7 +1,7 @@
-declare -a applications=( 
+declare -a applications=(
 # Development
-  XCode 
-# Office  
+  XCode
+# Office
   Keynote Numbers Pages MindNode_2 Money
 # Base
   Homebrew Wget Brew Cask Oh_My_Zsh
@@ -9,6 +9,8 @@ declare -a applications=(
   Dropbox Box_Sync OneDrive
 # DevOps Tools
   Virtual_Box Vagrant Packer Docker_Tool_Box GitHub_Desktop MacDown
+# Editors
+  Sublime3 Atom
 # Browsers
   Firefox TorBrowser
 # Movies
@@ -19,6 +21,6 @@ declare -a applications=(
   Colloquy Skype Twitter
 # File Management
   Transmission UnRarX
-# Miscellaneous 
+# Miscellaneous
   Caffeine OnePassword
 )
