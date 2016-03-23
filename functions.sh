@@ -32,7 +32,7 @@ install_cmd() {
     eval "${install}"
   fi
 
-  check_app "${app}" "${file}" 
+  check_app "${app}" "${file}"
   [[ $? -eq 1 ]] && error "${app}" && return 1
   return 0
 }
@@ -78,19 +78,6 @@ copy_file() {
   fi
 }
 
-install_sublime_text_3() {
-  check_app 'Sublime Text 3' '/usr/bin/subl' --quiet
-  if [[ $? -eq 1 ]]
-    then
-    echo "Download and install latest version of Sublime Text 3 (http://www.sublimetext.com/3)"
-    echo "Cannot be installed with Brew because there is only version 2"
-    open "http://www.sublimetext.com/3"
-    read -p "Press [Enter] key when it is ready ..."
-    sudo ln -s "/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl" /usr/bin/subl
-  fi
-  check_app 'Sublime Text 3' '/usr/bin/subl'
-}
-
 install_google_chrome() {
   check_app 'Google Chrome' '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome' --quiet
   if [[ $? -eq 1 ]]
@@ -102,5 +89,3 @@ install_google_chrome() {
   fi
   check_app 'Google Chrome' '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome'
 }
-
-
