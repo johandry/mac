@@ -2,13 +2,15 @@ declare -a applications=(
 # Development
   XCode OS_X_Server 
 # Office  
-  Keynote Numbers Pages HP_Easy_Scan MindNode_2 Money
+  Keynote Numbers Pages HP_Easy_Scan MindNode_2
 # Base
   Homebrew Wget Brew Cask Oh_My_Zsh
 # Cloud Storage
   Dropbox Box_Sync OneDrive
 # DevOps Tools
   Virtual_Box Vagrant Packer Docker_Tool_Box GitHub_Desktop MacDown
+# Editors
+  Sublime3 Atom
 # Browsers
   Firefox TorBrowser
 # Movies

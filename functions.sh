@@ -78,6 +78,19 @@ copy_file() {
   fi
 }
 
+customize_oh_my_zsh() {
+  theme='ZSH_THEME="af-magic-clean"'
+  grep -q $theme $HOME/.zshrc || sed -i.bak "s/^ZSH_THEME=\".*\"$/$theme/" $HOME/.zshrc
+
+  plugins='plugins=(git brew brew-cask colorize common-aliases docker docker-compose emoji emoji-clock vagrant)'
+  grep -q "$plugins" $HOME/.zshrc || sed -i.bak "s/^plugins=(.*)$/$plugins/" $HOME/.zshrc
+
+  rm -f $HOME/.zshrc.bak
+  grep -q $theme $HOME/.zshrc && grep -q "$plugins" $HOME/.zshrc && ok "Oh-My-Zsh have been customized" && return 0
+  error "Oh-My-Zsh couldn't been customized"
+  return 0
+}
+
 install_google_chrome() {
   check_app 'Google Chrome' '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome' --quiet
   if [[ $? -eq 1 ]]

@@ -2,7 +2,7 @@ declare -a applications=(
 # Development
   XCode
 # Office
-  Keynote Numbers Pages MindNode_2 Money
+  Keynote Numbers Pages MindNode_2
 # Base
   Homebrew Wget Brew Cask Oh_My_Zsh
 # Cloud Storage
