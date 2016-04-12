@@ -26,18 +26,16 @@ cd OSX_Setup
 ./setup.sh
 ```
 
-This will open the App Store application to install the required applications, this may be a mid-manual process. Then will install automatically another list of applications using ``brew``. Then finalize with a list of applications that need to be installed manually (so far, just one: Google Chrome).
+This will open the App Store application to install the required applications, this may be a semi-automated process. It will install automatically another list of applications using ``brew`` mainly. Then finalize with a list of applications that need to be installed manually (so far, just one: Google Chrome).
 
 The script will also execute other tasks such as create a Workspace directory, customize the shell theme, etc...
 
-Other manual settings may be needed after the execution of the script. Most of these steps were taken from [here](http://sourabhbajaj.com/mac-setup/index.html).
-
 ## Manual Settings
-
+Other manual settings may be needed after the execution of the script.
 ### System Preferences
-  1. Check the required Trackpad settings. Go to ``System Preferences -> Trackpad``, then ``Point & Click`` and ``Scroll & Zoom``
-  1. Modify the Dock size. Go to ``System Preferences -> Dock`` and adjust the Size.
-  1. Finder Settings. Open ``Finder``, then:
+  1. Trackpad settings: Go to ``System Preferences -> Trackpad``, then ``Point & Click`` and ``Scroll & Zoom`` to modify the Trackpad settings.
+  1. Modify the Dock size: Go to ``System Preferences -> Dock`` and adjust the Size.
+  1. Finder Settings: Open ``Finder``, then:
     * Go to preferences (&#8984; + ,) and select/deselect the items as desired.
     * Go to ``General`` tab and select your home in ``New Finder windows show``.
     * In the sidebar order the items and add ``Workspace``.
