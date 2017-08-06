@@ -1,4 +1,4 @@
-# Personal MacBook Pro Setup
+# OSX Setup
 Script to automate the setup of my Mac's
 
 - [Installation](#installation)
