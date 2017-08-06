@@ -5,6 +5,9 @@ TITLE='Mac Provisioner'
 PROJECT="OSX_Setup"
 SOURCE_DIR=
 
+APPLE_ID=johandry@icloud.com
+DOCK_SIZE=40
+
 #=======================================================================================================
 # Author: Johandry Amador <johandry@gmail.com>
 # Title:  {title}
@@ -23,62 +26,81 @@ SOURCE_DIR=
 #=======================================================================================================
 
 [[ ! -e "$HOME/bin/common.sh" ]] && \
-  echo "~/bin/common.sh not found, install it with: " && \
-  echo "    curl -s http://cs.johandry.com/install | bash" && \
+  echo "~/bin/common.sh was not found, I'm installing it ..." && \
+  curl -s http://cs.johandry.com/install | bash
+
+[[ ! -e "$HOME/bin/common.sh" ]] && \
+  echo "~/bin/common.sh was not found, install it manually from: http://cs.johandry.com/install " && \
   exit 1
 
 source ~/bin/common.sh
 
-source "${SCRIPT_DIR}/functions.sh"
-source "${SCRIPT_DIR}/config.sh"
+info "Installing Homebrew, Homebrew Bundle"
+[[ -z "$(command -v brew)" ]] && \
+  /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+brew tap Homebrew/bundle
 
-if [[ -z $1 ]]
-  then
-  if [[ -e "${SCRIPT_DIR}/$HOSTNAME.cnf" ]]
-    then
-    info "Loading $HOSTNAME.cnf configuration"
-    source "${SCRIPT_DIR}/$HOSTNAME.cnf"
-  else
-    error "The configuration file for this host ($HOSTNAME) was not found. Provide a configuration file to load."
-    exit 1
-  fi
-else
-  if [[ -e "${SCRIPT_DIR}/$1.cnf"  ]]
-    then
-    info "Loading $1.cnf configuration"
-    source "${SCRIPT_DIR}/$1.cnf"
-  else
-    error "Configuration file for $1 was not found. Enter a valid configuration ($(ls ${SCRIPT_DIR}/*.cnf | sed 's/\(.*\)\.cnf/\1/' | tr '\n' ',' | sed 's/,/, /'))"
-    exit 1
-  fi
+if [[ $? -ne 0 ]]; then
+  error "Apple Store sign in failed. Try with command: mas signin ${APPLE_ID}"
+  exit 2
 fi
 
+info "Creating Brewfile"
+cp "${SCRIPT_DIR}/Brewfile.Common" "${SCRIPT_DIR}/Brewfile"
+hostname=$(uname -n)
 
-echo
-echo "Directories and files"
-echo
+if [[ -e "${SCRIPT_DIR}/Brewfile.${hostname}" ]]; then
+  info "  * Using Brewfile.${hostname}"
+  cat "${SCRIPT_DIR}/Brewfile.${hostname}" >> "${SCRIPT_DIR}/Brewfile"
+else
+  warn "  * Not found Brewfile.${hostname}"
+fi
 
-create_dir 'Workspace & Sandbox' "$HOME/Workspace/Sandbox"
-create_dir 'Local bin' "$HOME/bin"
-
-copy_file 'Common script' "${SCRIPT_DIR}/files/common.sh" "$HOME/bin/common.sh"
-
-echo
-echo "Applications"
-echo
-
-for app in ${applications[@]}
-do
-  install $app
+for f in "$@"; do
+  if [[ -e "${SCRIPT_DIR}/Brewfile.$f" ]]; then
+    info "  * Appending Brewfile.$f"
+    cat "${SCRIPT_DIR}/Brewfile.$f" >> "${SCRIPT_DIR}/Brewfile"
+  else
+    warn "  * Not found Brewfile.$f"
+  fi
 done
 
-create_dir 'Oh-My-Zsh Custom Themes Directory' "$HOME/.oh-my-zsh/custom/themes"
-copy_file 'Oh-My-Zsh Custom Theme ' "${SCRIPT_DIR}/files/af-magic-clean.zsh-theme" "$HOME/.oh-my-zsh/custom/themes/af-magic-clean.zsh-theme"
+info "Brewing all the applications"
+brew bundle
 
-customize_oh_my_zsh
+info "Installing Atom packages"
+for pkg in $(cat Atom_Packages.lst); do
+  [[ ! -d ${HOME}/.atom/packages/${pkg} ]] && apm install ${pkg}
+done
 
-echo
-echo "Manual Installs"
-echo
+info "Resizing Dock"
+currentSize=$(defaults read com.apple.dock tilesize 2>/dev/null)
+[[ ${currentSize} -ne ${DOCK_SIZE} ]] && defaults write com.apple.dock tilesize -int ${DOCK_SIZE} && killall Dock
 
-install_google_chrome
+info "Setting Trackpad Tap to Click"
+currentClicking=$(defaults read com.apple.driver.AppleBluetoothMultitouch.trackpad Clicking)
+  [[ ${currentClicking} -ne 1 ]] && defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad Clicking -bool true
+currentTapBehaviour=$(defaults -currentHost read NSGlobalDomain com.apple.mouse.tapBehavior)
+if [[ ${currentTapBehaviour} -ne 1 ]]; then
+  defaults -currentHost write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
+  defaults write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
+fi
+
+info "Creating Directories"
+mkdir -p ${HOME}/Workspace/{bin,pkg,src/Sandbox}
+mkdir -p ${HOME}/bin
+
+info "Installing Zsh"
+[[ ! -e "$HOME/.oh-my-zsh/oh-my-zsh.sh" ]] && \
+  curl -L https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh | sh
+
+mkdir -p $HOME/.oh-my-zsh/custom/themes
+cp ${SCRIPT_DIR}/files/af-magic-clean.zsh-theme ${HOME}/.oh-my-zsh/custom/themes/af-magic-clean.zsh-theme
+
+theme='ZSH_THEME="af-magic-clean"'
+grep -q ${theme} ${HOME}/.zshrc || sed -i.bak "s/^ZSH_THEME=\".*\"$/${theme}/" ${HOME}/.zshrc
+
+plugins='plugins=(git github osx python pip sudo ruby rbenv go brew brew-cask colorize common-aliases docker docker-compose emoji emoji-clock vagrant aws ng npm)'
+grep -q "${plugins}" ${HOME}/.zshrc || sed -i.bak "s/^plugins=(.*)$/${plugins}/" ${HOME}/.zshrc
+
+rm -f $HOME/.zshrc.bak

@@ -1,0 +1,4 @@
+## Applications to install in Johandrys-MacBook-Pro.local
+
+# Media
+cask "plex-media-server"
