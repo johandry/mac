@@ -7,6 +7,7 @@ SOURCE_DIR=
 
 APPLE_ID=johandry@icloud.com
 DOCK_SIZE=40
+ZSH_THEME=af-magic-clean
 
 #=======================================================================================================
 # Author: Johandry Amador <johandry@gmail.com>
@@ -68,6 +69,8 @@ done
 info "Brewing all the applications"
 brew bundle
 
+mv Brewfile ~/.Brewfile
+
 info "Installing Atom packages"
 for pkg in $(cat Atom_Packages.lst); do
   [[ ! -d ${HOME}/.atom/packages/${pkg} ]] && apm install ${pkg}
@@ -85,6 +88,22 @@ if [[ ${currentTapBehaviour} -ne 1 ]]; then
   defaults -currentHost write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
   defaults write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
 fi
+currentRightClick=$(defaults read com.apple.driver.AppleBluetoothMultitouch.trackpad TrackpadRightClick -bool true)
+if [[ ${currentRightClick} -ne 1 ]]; then
+  defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad TrackpadRightClick -bool true
+  defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad TrackpadCornerSecondaryClick -int 2
+fi
+currentSecondaryClick=$(defaults -currentHost read NSGlobalDomain com.apple.trackpad.enableSecondaryClick -bool true)
+if [[ ${currentSecondaryClick} -ne 1 ]]; then
+  defaults -currentHost write NSGlobalDomain com.apple.trackpad.enableSecondaryClick -bool true
+  defaults -currentHost write NSGlobalDomain com.apple.trackpad.trackpadCornerClickBehavior -int 1
+fi
+currentRightClick2=$(defaults read com.apple.AppleMultitouchTrackpad TrackpadRightClick -bool true)
+if [[ ${currentRightClick2} -ne 1 ]]; then
+  defaults write com.apple.AppleMultitouchTrackpad TrackpadRightClick -bool true
+  defaults write com.apple.AppleMultitouchTrackpad TrackpadCornerSecondaryClick -int 2
+fi
+
 
 info "Creating Directories"
 mkdir -p ${HOME}/Workspace/{bin,pkg,src/Sandbox}
@@ -95,9 +114,9 @@ info "Installing Zsh"
   curl -L https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh | sh
 
 mkdir -p $HOME/.oh-my-zsh/custom/themes
-cp ${SCRIPT_DIR}/files/af-magic-clean.zsh-theme ${HOME}/.oh-my-zsh/custom/themes/af-magic-clean.zsh-theme
+cp ${SCRIPT_DIR}/files/${ZSH_THEME}.zsh-theme ${HOME}/.oh-my-zsh/custom/themes/${ZSH_THEME}.zsh-theme
 
-theme='ZSH_THEME="af-magic-clean"'
+theme="ZSH_THEME=\"${ZSH_THEME}\""
 grep -q ${theme} ${HOME}/.zshrc || sed -i.bak "s/^ZSH_THEME=\".*\"$/${theme}/" ${HOME}/.zshrc
 
 plugins='plugins=(git github osx python pip sudo ruby rbenv go brew brew-cask colorize common-aliases docker docker-compose emoji emoji-clock vagrant aws ng npm)'
