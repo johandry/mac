@@ -11,14 +11,17 @@ The only requirement to setup your Mac is to login to the Apple Store with your 
 
 Clone the project to any location, i.e. `/tmp`
 
-	cd /tmp
+	cd ~/Download
 	git clone https://github.com/johandry/OSX_Setup.git
-
-Or, if `git` is not installed, [download](https://github.com/johandry/OSX_Setup/archive/v2.0.zip) and unzip the project.
-Go to the directory of the cloned project and execute `setup.sh`.
-
-
 	cd OSX_Setup
+
+Or, if `git` is not installed, [download](https://github.com/johandry/OSX_Setup/archive/v2.0.zip) and unzip it:
+
+	open https://github.com/johandry/OSX_Setup/archive/v2.0.zip
+	cd ~/Download/OSX_Setup
+
+And execute `setup.sh`.
+
 	./setup.sh
 
 The `setup.sh` script install automatically a list of applications using [Homebrew](https://brew.sh/) and [mas-cli](https://github.com/mas-cli/mas). It will also execute other tasks such as create a Workspace directory, customize the Zsh theme and more.
