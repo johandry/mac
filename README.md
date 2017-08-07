@@ -16,7 +16,7 @@ To install just clone the project to any location
 git clone https://github.com/johandry/OSX_Setup.git
 ```
 
-Or, if ``git`` is not installed, [download](https://github.com/johandry/OSX_Setup/archive/master.zip) and unzip the project to any location.
+Or, if ``git`` is not installed, [download](https://github.com/johandry/OSX_Setup/archive/v1.0.zip) and unzip the project to any location.
 
 ## Execution
 Move to the directory of the cloned project and execute ``setup.sh``.
