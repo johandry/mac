@@ -1,0 +1,19 @@
+## Applications to install in Johandrys-MacBook-Pro.local
+
+# Development & DevOps
+brew "awscli"
+brew "go"
+brew "python3"
+brew "rbenv"
+cask "github-desktop"
+
+# Communication
+cask "colloquy"
+
+# Media
+cask "spotify"
+
+## Applications to install in Johandrys-MacBook-Pro.local
+
+# Media
+cask "plex-media-server"

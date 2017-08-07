@@ -1,0 +1,62 @@
+# Core
+tap "caskroom/cask"
+tap "homebrew/bundle"
+brew "mas"
+
+# Taps
+tap 'homebrew/command-not-found'
+
+# Utils
+brew "jq"
+brew "wget"
+brew "tree"
+brew "zsh-completions"
+brew "zsh-syntax-highlighting"
+cask "caffeine"
+cask "unrarx"
+brew "imagemagick"
+mas "The Unarchiver", id: 425424353
+mas "1Password", id: 443987910
+cask "teamviewer"
+
+# Office
+mas "Keynote", id: 409183694
+mas "Pages", id: 409201541
+mas "Numbers", id: 409203825
+mas "MindNode", id: 992076693
+mas "iMovie", id: 408981434
+mas "GarageBand", id: 682658836
+
+# Internet & Social Network
+cask "torbrowser"
+cask "transmission"
+mas "Twitter", id: 409789998
+mas "Speedtest", id: 1153157709
+# Fail to install Google Chrome
+# cask "google-chrome"
+
+# Development & DevOps
+mas "Xcode", id: 497799835
+cask "atom"
+cask "virtualbox"
+cask "virtualbox-extension-pack"
+cask "vagrant"
+cask "vagrant-manager"
+mas "Server", id: 883878097
+
+# Cloud
+cask "box-sync"
+cask "dropbox"
+mas "OneDrive", id: 823766827
+
+# Media
+cask "vlc"
+cask "handbrake"
+cask "makemkv"
+cask "mkvtools"
+cask "subler"
+cask "sublercli"
+
+# Communications
+cask "skype"
+cask "slack"
