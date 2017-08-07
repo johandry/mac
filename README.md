@@ -9,7 +9,7 @@ Script to automate the setup of my Mac's
 
 The only requirement to setup your Mac is to login to the Apple Store with your Apple ID.
 
-Clone the project to any location, i.e. `/tmp`
+Clone the project to any location, i.e. `~/Download`
 
 	cd ~/Download
 	git clone https://github.com/johandry/OSX_Setup.git
@@ -47,7 +47,7 @@ You can create a list of installed applications with the command `brew bundle du
 
 The `setup.sh` script will create a Brewfile that will be saved to `~/.Brewfile` so you can upgrade all the applications at any time with:
 
-	brew bundle -f ~/.Brewfile
+	brew bundle --file=~/.Brewfile
 
 It's possible to test the script using Vagrant. Follow these steps to use OSX Setup with Vagrant:
 
