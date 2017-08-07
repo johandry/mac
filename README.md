@@ -25,12 +25,12 @@ The `setup.sh` script install automatically a list of applications using [Homebr
 
 ### Manual System Preferences
 
-  1. *Trackpad settings*: Go to `System Preferences` -> `Trackpad` to modify the Trackpad settings.
-  1. *Finder Settings*: Open `Finder`, then:
-    * Go to preferences (&#8984; + ,) and select/deselect the items as desired.
-    * Go to `General` tab and select your home in `New Finder windows show`.
-    * In the sidebar order the items and add `Workspace`.
-  1. *Battery Percentage*: In the menu bar, right click on the battery and select `Show Percentage`.
+1. *Trackpad settings*: Go to `System Preferences` -> `Trackpad` to modify the Trackpad settings.
+2. *Finder Settings*: Open `Finder`, then:
+  * Go to preferences (&#8984; + ,) and select/deselect the items as desired.
+  * Go to `General` tab and select your home in `New Finder windows show`.
+  * In the sidebar order the items and add `Workspace`.
+3. *Battery Percentage*: In the menu bar, right click on the battery and select `Show Percentage`.
 
 ## Development and Maintenance
 To modify the list of applications to install or modify the script, first clone (see above) or pull the project.
