@@ -30,6 +30,7 @@ mas "GarageBand", id: 682658836
 # Internet & Social Network
 cask "torbrowser"
 cask "transmission"
+cask "private-internet-access"
 mas "Twitter", id: 409789998
 mas "Speedtest", id: 1153157709
 # Fail to install Google Chrome
