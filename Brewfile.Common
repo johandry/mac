@@ -57,6 +57,7 @@ cask "makemkv"
 cask "mkvtools"
 cask "subler"
 cask "sublercli"
+cask "flixtools"
 
 # Communications
 cask "skype"
