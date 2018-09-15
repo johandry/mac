@@ -1,6 +1,9 @@
-# af-magic.zsh-theme
+# af-magic-clean.zsh-theme
 # Repo: https://github.com/andyfleming/oh-my-zsh
 # Direct Link: https://github.com/andyfleming/oh-my-zsh/blob/master/themes/af-magic.zsh-theme
+# Direct Link: https://github.com/andyfleming/oh-my-zsh/blob/master/themes/clean.zsh-theme
+
+# This zsh theme is a merge between the af-magic and clean themes
 
 if [ $UID -eq 0 ]; then NCOLOR="red"; else NCOLOR="green"; fi
 local return_code="%(?..%{$fg[red]%}%? ↵%{$reset_color%})"
