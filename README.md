@@ -1,58 +1,57 @@
 # Mac OS X Setup
+
 Script to automate the setup of my Mac's
 
 - [Quick Start](#quick-start)
-- [Manual System Preferences](#manual-system-preferences)
+- [Manual Setup](#manual-setup)
 - [Development & Maintenance](#development-and-maintenance)
 
 ## Quick Start
 
-The only requirement to setup your Mac is to login to the Apple Store with your Apple ID.
-
-Clone the project to any location, i.e. `~/Download`
-
-	cd ~/Download
-	git clone https://github.com/johandry/OSX_Setup.git
-	cd OSX_Setup
-
-Or, if `git` is not installed, [download](https://github.com/johandry/OSX_Setup/archive/v2.0.zip) and unzip it:
-
-	open https://github.com/johandry/OSX_Setup/archive/v2.0.zip
-	cd ~/Download/OSX_Setup
-
-And execute `setup.sh`.
-
-	./setup.sh
+1. Login to the Apple Store with your Apple ID
+2. Execute `curl http://www.johandry.com/macsetup/setup.sh | bash`
+3. Follow the manual setup instructions below
 
 The `setup.sh` script install automatically a list of applications using [Homebrew](https://brew.sh/) and [mas-cli](https://github.com/mas-cli/mas). It will also execute other tasks such as create a Workspace directory, customize the Zsh theme and more.
 
-### Manual System Preferences
+## Manual Setup
 
-1. *Trackpad settings*: Go to `System Preferences` -> `Trackpad` to modify the Trackpad settings.
-2. *Finder Settings*: Open `Finder`, then:
-  * Go to preferences (&#8984; + ,) and select/deselect the items as desired.
-  * Go to `General` tab and select your home in `New Finder windows show`.
-  * In the sidebar order the items and add `Workspace`.
-3. *Battery Percentage*: In the menu bar, right click on the battery and select `Show Percentage`.
+### Trackpad settings
+
+Go to `System Preferences` -> `Trackpad` to modify the Trackpad settings
+
+### Finder Settings
+
+Open `Finder`, then:
+
+1. Go to preferences (&#8984; + ,) and select/deselect the items as desired.
+2. Go to `General` tab and select your home in `New Finder windows show`.
+3. In the sidebar order the items and add `Workspace`.
+
+### Battery Percentage
+
+In the menu bar, right click on the battery and select `Show Percentage`.
 
 ## Development and Maintenance
-To modify the list of applications to install or modify the script, first clone (see above) or pull the project.
 
-	cd OSX_Setup
-	git pull https://github.com/johandry/OSX_Setup.git
+To modify the list of applications to install or modify the script, first clone or pull the project.
 
-There is a file per Mac named with the hostname, i.e. `Brewfile.Johandrys-MacBook-Pro.local`, and the file `Brewfile.Common` with all the applications every mac should have. Those Brewfiles are required by [Brew Bundle](https://github.com/Homebrew/homebrew-bundle) and they list all the applications to install. Comments starting with `#` are allowed.
+There is a file per Mac named with the hostname, i.e. `Brewfile.Johandrys-MacBook-Pro.local`, and the file `Brewfile.Common` with all the applications every mac should have. These Brewfiles are required by [Brew Bundle](https://github.com/Homebrew/homebrew-bundle) and they list all the applications to install. Comments starting with `#` are allow.
 
 You can create a list of installed applications with the command `brew bundle dump`, then move the applications in `Brewfile` to the right `Brewfile.*`
 
 The `setup.sh` script will create a Brewfile that will be saved to `~/.Brewfile` so you can upgrade all the applications at any time with:
 
-	brew bundle --file=~/.Brewfile
+```bash
+brew bundle --file=~/.Brewfile
+```
 
 It's possible to test the script using Vagrant. Follow these steps to use OSX Setup with Vagrant:
 
-	vagrant up
-	vagrant ssh
+```bash
+vagrant up
+vagrant ssh
+```
 
 As mentioned above, you need to login to Apple Store with your Apple ID. Follow these steps at the Vagrant box:
 
