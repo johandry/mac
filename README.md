@@ -18,7 +18,9 @@ Script to automate the setup of my Mac's
 
 3. Install manually the applications that failed to install or follow the instructions that an installed program require.
 
-4. Complete the setup following the instructions below
+4. Complete the setup following the instructions from the **Manual Setup** section
+
+It may be required to execute again the setup script, update the Mac with Apple Store or maybe restart it.
 
 ## Manual Setup
 
@@ -40,6 +42,8 @@ Yes, Docker can be installed with `brew` but, as it's an critial application I p
 
 ### Google Chrome
 
+Open Google Chrome and login with your user.
+
 In the past the brew install of Chrome caused some problems every time there is a Chrome update. If it happens again, uninstall the brew cask for Chrome and install it manually
 
 ```bash
@@ -55,13 +59,19 @@ Download it from [here](https://www.google.com/chrome/) and install it.
 3. Go to **Profiles** tab, select **Pro** as the default one.
 4. In the Pro profile, go to the **Window** tab, set **160** in **Columns**, and **48** in **Rows**.
 
-### NETGEAR Genie
+### Manual Download and Install
 
-Download it from [here](http://updates1.netgear.com/netgeargenie/mac/update/NETGEARGenieInstaller.dmg)
+- NETGEAR Genie: Download it from [here](http://updates1.netgear.com/netgeargenie/mac/update/NETGEARGenieInstaller.dmg)
+- Printer drivers and utilities: Download them from [here](https://epson.com/Support/Printers/All-In-Ones/WorkForce-Series/Epson-WorkForce-WF-3620/s/SPT_C11CD19201)
 
-### Printer drivers and utilities
+### Manual and Specific Setups
 
-Download drivers and utilities for the printer from [here](https://epson.com/Support/Printers/All-In-Ones/WorkForce-Series/Epson-WorkForce-WF-3620/s/SPT_C11CD19201)
+Open all the installed applications and make sure they are working, most of them require to accept something or require an user input. These are some of these applications:
+
+- iTunes
+- XCode
+- 1Password
+- Google Chrome
 
 ## Development and Maintenance
 
