@@ -13,28 +13,55 @@ Script to automate the setup of my Mac's
 2. Execute:
 
    ```bash
-   curl http://www.johandry.com/mac/setup.sh | bash
+   curl -fsL http://www.johandry.com/mac/setup.sh | bash
    ```
 
-3. Complete the setup following the instructions below
+3. Install manually the applications that failed to install or follow the instructions that an installed program require.
+
+4. Complete the setup following the instructions below
 
 ## Manual Setup
 
-### Trackpad settings
+### Basic Setup
 
-Go to **System Preferences**, then **Trackpad** to modify the Trackpad settings
+1. Go to **System Preferences**, then **Trackpad** to modify the Trackpad settings.
+2. Open **Finder**, go to **Preferences** (&#8984; + ,), then **General** tab. Select your home directory in **New Finder windows show**.
+3. Still on Finder Preferences, go to **Sidebar** tab, select/deselect the items as desired
+4. Open Fider and in the sidebar, order the items and add **Workspace** and **Sandbox** directories, also the **Cloud Storages** directories.
+5. In the menu bar, right click on the battery and select **Show Percentage**.
 
-### Finder Settings
+### Docker
 
-Open **Finder**, then:
+Yes, Docker can be installed with `brew` but, as it's an critial application I prefer to install it manually, so:
 
-1. Go to **Preferences** (&#8984; + ,) and select/deselect the items as desired.
-2. Go to **General** tab and select your home in **New Finder windows show**.
-3. In the sidebar order the items and add **Workspace** and **Sandbox** directories.
+1. Download it from [here](https://download.docker.com/mac/stable/Docker.dmg)
+   *(It may be required to login first with the DockerHub user)*
+2. Install it or [follow the instructions](https://docs.docker.com/docker-for-mac/install/)
 
-### Battery Percentage
+### Google Chrome
 
-In the menu bar, right click on the battery and select **Show Percentage**.
+In the past the brew install of Chrome caused some problems every time there is a Chrome update. If it happens again, uninstall the brew cask for Chrome and install it manually
+
+```bash
+brew cask uninstall
+```
+
+Download it from [here](https://www.google.com/chrome/) and install it.
+
+### Terminal and iTerm
+
+1. Open **Terminal**, go to **Preferences** (&#8984; + ,), select **General** tab.
+2. Select **Pro** in **New window with profile**
+3. Go to **Profiles** tab, select **Pro** as the default one.
+4. In the Pro profile, go to the **Window** tab, set **160** in **Columns**, and **48** in **Rows**.
+
+### NETGEAR Genie
+
+Download it from [here](http://updates1.netgear.com/netgeargenie/mac/update/NETGEARGenieInstaller.dmg)
+
+### Printer drivers and utilities
+
+Download drivers and utilities for the printer from [here](https://epson.com/Support/Printers/All-In-Ones/WorkForce-Series/Epson-WorkForce-WF-3620/s/SPT_C11CD19201)
 
 ## Development and Maintenance
 
@@ -44,19 +71,43 @@ The `setup.sh` script install automatically a list of applications using [Homebr
 
 There is a file per Mac named with the hostname, i.e. `Brewfile.Johandrys-MacBook-Pro.local`, and the file `Brewfile.Common` with all the applications every mac should have. These Brewfiles are required by [Brew Bundle](https://github.com/Homebrew/homebrew-bundle) and they list all the applications to install. Comments starting with `#` are allow.
 
-You can create a list of installed applications with the command `brew bundle dump`, then move the applications in `Brewfile` to the right `Brewfile.*`
+You can create a list of installed applications with the folowing command:
+
+```bash
+brew bundle dump --describe
+```
+
+Then move the applications in `Brewfile` to the right `Brewfile.*`.
 
 The `setup.sh` script will create a Brewfile that will be saved to `~/.Brewfile` so you can upgrade all the applications at any time with:
 
 ```bash
-brew bundle --file=~/.Brewfile
+brew bundle install --verbose --global
 ```
+
+Or remove the none required programs with:
+
+```bash
+brew bundle cleanup --global
+```
+
+### Testing
+
+To test locally (not always recommended), execute:
+
+```bash
+LOCAL_SETUP=1 ./setup.sh Test
+```
+
+The environment variable `LOCAL_SETUP=1` use the files locally instead of getting them from GitHub. The `Test` parameter is to use the `Brewfile.Test` instead the one with the hostname. You may replace the word `Test` to other Brewfile you would like to test.
 
 It's possible to test the script using Vagrant. Follow these steps to use OSX Setup with Vagrant:
 
 ```bash
 vagrant up
 vagrant ssh
+$ cd OS_Setup
+$ LOCAL_SETUP=1 ./setup.sh Test
 ```
 
 As mentioned above, you need to login to Apple Store with your Apple ID. Follow these steps at the Vagrant box:
