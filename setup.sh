@@ -109,9 +109,9 @@ currentSize=$(defaults read com.apple.dock tilesize 2>/dev/null)
 
 
 info "Creating Directories"
-mkdir -p ${HOME}/go/{bin,pkg,src/github.com/johandry}
-mkdir -p ${HOME}/{bin,Workspace/Sandbox}
-ln -s ${HOME}/go/src/github.com/johandry ${HOME}/Workspace
+mkdir -p ${HOME}/Workspace/go/{bin,pkg,src/github.com/johandry,Sandbox}
+mkdir -p ${HOME}/bin
+ln -s ${HOME}/Workspace/src/github.com/johandry ${HOME}/Workspace
 
 info "Setting up Zsh"
 [[ ! -e "$HOME/.oh-my-zsh/oh-my-zsh.sh" ]] && \
