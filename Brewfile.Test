@@ -4,7 +4,6 @@
 brew "awscli"
 brew "go"
 brew "python3"
-# brew "rbenv"
 cask "github-desktop"
 
 # Communication

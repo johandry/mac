@@ -1,4 +1,4 @@
-## Applications to install in Johandrys-MacBook-Pro.local
+## Applications to install in HomeServer.local
 
 # Media
 cask "plex-media-server"
