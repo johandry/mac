@@ -41,6 +41,20 @@ Yes, Docker can be installed with `brew` but, as it's an critial application I p
    *(It may be required to login first with the DockerHub user)*
 2. Install it or [follow the instructions](https://docs.docker.com/docker-for-mac/install/)
 
+### AWS CLI
+
+Configure your access to AWS through the CLI. Find the AWS access keys, it should be a CSV document. Open Terminal and execute the following command to enter the `AWS Access Key ID` and `AWS Secret Access Key`:
+
+```bash
+aws configure
+```
+
+The region could be `us-west-2` and the output format `json`. Verify the access with the command:
+
+```bash
+aws ec2 describe-key-pairs
+```
+
 ### Microsoft Office 365 Home
 
 1. Go to [office service](https://account.microsoft.com/services/office/install)
@@ -65,6 +79,22 @@ Download it from [here](https://www.google.com/chrome/) and install it.
 3. Go to **Profiles** tab, select **Pro** as the default one.
 4. In the Pro profile, go to the **Window** tab, set **160** in **Columns**, and **48** in **Rows**.
 
+### Visual Studio Code Extensions
+
+Create a new file with a simple Go code:
+
+```go
+package main
+
+import "fmt"
+
+func main() {
+  fmt.Println("hello")
+}
+```
+
+Save it and install all the dependencies required by the VSCode Go package.
+
 ### Manual Download and Install
 
 - NETGEAR Genie: Download it from [here](http://updates1.netgear.com/netgeargenie/mac/update/NETGEARGenieInstaller.dmg)
@@ -82,7 +112,7 @@ Open all the installed applications and make sure they are working, most of them
 - Skype
 - WhatsApp
 - Spotify
-- Visual Studio Code Extensions
+- Github Desktop
 - Microsoft Office Apps (Word, Excel, PowerPoint, OneNote, Outlook)
 
 ## Development and Maintenance
