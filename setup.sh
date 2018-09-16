@@ -124,7 +124,7 @@ ln -s ${HOME}/Workspace/src/github.com/johandry ${HOME}/Workspace
 
 info "Setting up Zsh"
 [[ ! -e "$HOME/.oh-my-zsh/oh-my-zsh.sh" ]] && \
-  curl -L https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh | sh
+  $CURL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh | sh
 
 mkdir -p $HOME/.oh-my-zsh/custom/themes
 $CURL $URL/files/${ZSH_THEME}.zsh-theme > ${HOME}/.oh-my-zsh/custom/themes/${ZSH_THEME}.zsh-theme
@@ -140,3 +140,10 @@ if ! grep -q '# DO NOT REMOVE: Personal ZSH settings' ${HOME}/.zshrc; then
 fi
 
 rm -f $HOME/.zshrc.bak
+
+info "Setting up Bash"
+
+[[ ! -e $HOME/.bash_profile ]] && touch $HOME/.bash_profile
+if ! grep -q '# DO NOT REMOVE: Personal Bash settings' ${HOME}/.bash_profile; then 
+  $CURL $URL/files/bash.config >> ${HOME}/.bash_profile
+fi
