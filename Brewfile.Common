@@ -16,7 +16,6 @@ brew "tree"
 brew "nmap"
 brew "watch"
 cask "caffeine"
-cask "unrarx"
 brew "imagemagick"
 mas "The Unarchiver", id: 425424353
 mas "1Password", id: 443987910
@@ -40,7 +39,7 @@ mas "Pages", id: 409201541
 # Internet
 cask "google-chrome"
 cask "firefox"
-cask "torbrowser"
+cask "tor-browser"
 cask "transmission"
 cask "private-internet-access"
 mas "Speedtest", id: 1153157709
@@ -63,7 +62,6 @@ mas "OneDrive", id: 823766827
 # Media
 cask "vlc"
 cask "handbrake"
-cask "handbrakecli"
 cask "makemkv"
 cask "mkvtools"
 cask "subler"
