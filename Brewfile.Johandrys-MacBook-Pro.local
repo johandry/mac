@@ -33,7 +33,7 @@ brew "python3"
 brew "node"
 
 # Development Tools
-cask "github-desktop"
+cask "github"
 cask "iterm2"
 
 # Blogging and Documentation
