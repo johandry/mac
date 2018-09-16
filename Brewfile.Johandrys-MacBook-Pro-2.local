@@ -1,0 +1,51 @@
+## Applications to install in Johandrys-MacBook-Pro.local
+
+# Taps
+tap "kyoh86/tap"
+
+# Utils
+mas "ResolutionTab", id: 540141595
+
+# Virtual Machines
+cask "virtualbox"
+cask "virtualbox-extension-pack"
+cask "vagrant"
+cask "vagrant-manager"
+brew "packer"
+
+# Cloud Platforms
+brew "awscli"
+cask "google-cloud-sdk"
+
+# Kubernetes
+cask "minikube"
+brew "kubernetes-cli"
+
+# Go Development
+brew "go"
+brew "kyoh86/tap/richgo"
+
+# Python Development
+brew "python", link: false
+brew "python3"
+
+# Node Development
+brew "node"
+
+# Development Tools
+cask "github-desktop"
+cask "iterm2"
+
+# Blogging and Documentation
+brew "hugo"
+cask "macdown"
+cask "typora"
+
+# Communication
+cask "colloquy"
+cask "skype"
+cask "slack"
+cask "whatsapp"
+
+# Media
+cask "spotify"
