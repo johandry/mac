@@ -39,6 +39,12 @@ URL="http://www.johandry.com/mac"
 
 source ~/bin/common.sh
 
+# Set LOCAL_SETUP=1 to make 'setup.sh' use local files instead of gettting them from GitHub
+if [[ "${LOCAL_SETUP}" == "1" ]]; then
+  CURL="cat"
+  URL="${SCRIPT_DIR}"
+fi
+
 info "Installing Homebrew, Homebrew Bundle"
 [[ -z "$(command -v brew)" ]] && \
   /usr/bin/ruby -e "$(${CURL} https://raw.githubusercontent.com/Homebrew/install/master/install)"
@@ -51,15 +57,11 @@ fi
 
 info "Creating Brewfile"
 $CURL $URL/Brewfile.Common > Brewfile
-hostname=$(uname -n)
 
-if $CURL $URL/Brewfile.${hostname} >> Brewfile; then 
-  info "  * Using Brewfile for ${hostname}"
-else 
-  warn "  * Not found Brewfile for ${hostname}"
-fi
+brewfiles="$@"
+[[ -z $brewfiles ]] && brewfiles=$(uname -n)
 
-for f in "$@"; do
+for f in $brewfiles; do
   if $CURL $URL/Brewfile.$f >> Brewfile; then 
     info "  * Appending Brewfile.$f"
   else 
@@ -68,7 +70,7 @@ for f in "$@"; do
 done
 
 info "Brewing all the applications"
-brew bundle
+brew bundle install --verbose
 
 mv Brewfile ~/.Brewfile
 
