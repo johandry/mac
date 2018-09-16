@@ -91,6 +91,38 @@ Or remove the none required programs with:
 brew bundle cleanup --global
 ```
 
+### Visual Studio Code Extensions
+
+To list the existing Visual Studio Code extensions execute the command:
+
+```bash
+code --list-extensions
+```
+
+Then update the file `VSCode_Extensions.lst`.
+
+To remove no needed extensions, use the command:
+
+```bash
+code --uninstall-extension <extension_name>
+```
+
+### Atom Packages
+
+To list the installed Atom packages, use the command:
+
+```bash
+apm list --bare --packages --installed --enabled
+```
+
+Then update the file `Atom_Packages.lst` but do not include the version number (including the `@` character) unless an specific version is required.
+
+To remove the no needed packages, use the command:
+
+```bash
+apm uninstall <package_name>
+```
+
 ### Testing
 
 To test locally (not always recommended), execute:
