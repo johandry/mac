@@ -79,9 +79,9 @@ Download it from [here](https://www.google.com/chrome/) and install it.
 3. Go to **Profiles** tab, select **Pro** as the default one.
 4. In the Pro profile, go to the **Window** tab, set **160** in **Columns**, and **48** in **Rows**.
 
-### Visual Studio Code Extensions
+### Visual Studio Code
 
-Create a new file with a simple Go code:
+The VS Code Go extension require a bunch of tools installed, to install them, create a new file with a simple Go code:
 
 ```go
 package main
@@ -93,7 +93,16 @@ func main() {
 }
 ```
 
-Save it and install all the dependencies required by the VSCode Go package.
+Save it and an alert at the bottom will ask to install all the dependencies required by the VSCode Go package. Select `All` and wait until all are installed.
+
+### Slack
+
+Login to the following workspaces using the email address `johandry@yahoo.com`:
+
+- gophers.slack.com
+- kubernetes.slack.com
+- sddevops.slack.com
+- devsecops.slack.com
 
 ### Manual Download and Install
 
@@ -111,6 +120,7 @@ Open all the installed applications and make sure they are working, most of them
 - Firefox
 - Skype
 - WhatsApp
+- Slack
 - Spotify
 - Github Desktop
 - Microsoft Office Apps (Word, Excel, PowerPoint, OneNote, Outlook)
