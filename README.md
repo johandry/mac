@@ -21,6 +21,7 @@ Script to automate the setup of my Mac's
 4. Complete the setup following the instructions from the **Manual Setup** section
 
 It may be required to execute again the setup script, update the Mac with Apple Store or maybe restart it.
+Pay attention to the output of the script, there may be manual actions required.
 
 ## Manual Setup
 
