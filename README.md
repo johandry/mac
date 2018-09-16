@@ -9,32 +9,38 @@ Script to automate the setup of my Mac's
 ## Quick Start
 
 1. Login to the Apple Store with your Apple ID
-2. Execute `curl http://www.johandry.com/macsetup/setup.sh | bash`
-3. Follow the manual setup instructions below
 
-The `setup.sh` script install automatically a list of applications using [Homebrew](https://brew.sh/) and [mas-cli](https://github.com/mas-cli/mas). It will also execute other tasks such as create a Workspace directory, customize the Zsh theme and more.
+2. Execute:
+
+   ```bash
+   curl http://www.johandry.com/mac/setup.sh | bash
+   ```
+
+3. Complete the setup following the instructions below
 
 ## Manual Setup
 
 ### Trackpad settings
 
-Go to `System Preferences` -> `Trackpad` to modify the Trackpad settings
+Go to **System Preferences**, then **Trackpad** to modify the Trackpad settings
 
 ### Finder Settings
 
-Open `Finder`, then:
+Open **Finder**, then:
 
-1. Go to preferences (&#8984; + ,) and select/deselect the items as desired.
-2. Go to `General` tab and select your home in `New Finder windows show`.
-3. In the sidebar order the items and add `Workspace`.
+1. Go to **Preferences** (&#8984; + ,) and select/deselect the items as desired.
+2. Go to **General** tab and select your home in **New Finder windows show**.
+3. In the sidebar order the items and add **Workspace** and **Sandbox** directories.
 
 ### Battery Percentage
 
-In the menu bar, right click on the battery and select `Show Percentage`.
+In the menu bar, right click on the battery and select **Show Percentage**.
 
 ## Development and Maintenance
 
 To modify the list of applications to install or modify the script, first clone or pull the project.
+
+The `setup.sh` script install automatically a list of applications using [Homebrew](https://brew.sh/) and [mas-cli](https://github.com/mas-cli/mas). It will also execute other tasks such as create a Workspace directory, customize the Zsh theme and more.
 
 There is a file per Mac named with the hostname, i.e. `Brewfile.Johandrys-MacBook-Pro.local`, and the file `Brewfile.Common` with all the applications every mac should have. These Brewfiles are required by [Brew Bundle](https://github.com/Homebrew/homebrew-bundle) and they list all the applications to install. Comments starting with `#` are allow.
 

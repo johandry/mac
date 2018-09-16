@@ -126,7 +126,7 @@ grep -q ${theme} ${HOME}/.zshrc || sed -i.bak "s/^ZSH_THEME=\".*\"$/${theme}/" $
 plugins='plugins=(git github osx python pip sudo go brew brew-cask colorize common-aliases docker docker-compose emoji emoji-clock vagrant aws ng npm zsh-completions kubectl)'
 grep -q "${plugins}" ${HOME}/.zshrc || sed -i.bak "s/^plugins=(.*)$/${plugins}/" ${HOME}/.zshrc
 
-if ! grep -q '# DO NOT REMOVE: Personal ZSH settings' files/zsh.config; then 
+if ! grep -q '# DO NOT REMOVE: Personal ZSH settings' ${HOME}/.zshrc; then 
   $CURL $URL/files/zsh.config >> ${HOME}/.zshrc
 fi
 
