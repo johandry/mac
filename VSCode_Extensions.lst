@@ -14,10 +14,10 @@ vstirbu.vscode-mermaid-preview
 
 # JSON, YAML, TOML & CSV
 bungcip.better-toml
-adamvoss.yaml
 redhat.vscode-yaml
 eriklynd.json-tools
 GrapeCity.gc-excelviewer
+# adamvoss.yaml ==> Not found
 
 # Python
 ms-python.python
