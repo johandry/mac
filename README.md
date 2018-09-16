@@ -40,6 +40,11 @@ Yes, Docker can be installed with `brew` but, as it's an critial application I p
    *(It may be required to login first with the DockerHub user)*
 2. Install it or [follow the instructions](https://docs.docker.com/docker-for-mac/install/)
 
+### Microsoft Office 365 Home
+
+1. Go to [office service](https://account.microsoft.com/services/office/install)
+2. Click on **Install Office** to download the installer
+
 ### Google Chrome
 
 Open Google Chrome and login with your user.
@@ -68,10 +73,16 @@ Download it from [here](https://www.google.com/chrome/) and install it.
 
 Open all the installed applications and make sure they are working, most of them require to accept something or require an user input. These are some of these applications:
 
-- iTunes
 - XCode
+- Server
 - 1Password
 - Google Chrome
+- Firefox
+- Skype
+- WhatsApp
+- Spotify
+- Visual Studio Code Extensions
+- Microsoft Office Apps (Word, Excel, PowerPoint, OneNote, Outlook)
 
 ## Development and Maintenance
 
