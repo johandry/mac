@@ -1,12 +1,23 @@
-# Angular & JS
+# Angular, JS & TypeScript
 Angular.ng-template
 johnpapa.Angular2
 Mikael.Angular-BeastCode
 dbaeumer.vscode-eslint
+eg2.tslint
+HookyQR.beautify
+teradata-covalent.covalent-snippets
 
-# Document Formats
+# Markdown
 DavidAnson.vscode-markdownlint
+AlanWalk.markdown-toc
+vstirbu.vscode-mermaid-preview
+
+# JSON, YAML, TOML & CSV
 bungcip.better-toml
+adamvoss.yaml
+redhat.vscode-yaml
+eriklynd.json-tools
+GrapeCity.gc-excelviewer
 
 # Python
 ms-python.python
@@ -17,17 +28,44 @@ carolynvs.dep
 
 # Rust
 rust-lang.rust
+kalitaalexey.vscode-rust
+
+# R ==> No need R at this time
+# Ikuyadeu.r-lsp
+# Ikuyadeu.r
+
+# gRPC
+zxh404.vscode-proto3
 
 # Docker
 PeterJausovec.vscode-docker
+formulahendry.docker-explorer
+
+# Kubernetes
+ipedrazas.kubernetes-snippets
+
+# Ansible
+haaaad.ansible
 
 # Git
 donjayamanne.githistory
 
-# Others
-cdsama.shell-snippets
-eg2.tslint
+# AWS
+aws-scripting-guy.cform
+pradiphudekar.cf-templates
+
+# Terraform
+mauve.terraform
+wholroyd.HCL
+
+# SVG
+cssho.vscode-svgviewer
+
+# Editor
+streetsidesoftware.code-spell-checker
 ms-vscode.atom-keybindings
+emmanuelbeziat.vscode-great-icons
 
-
+# Shell
+# cdsama.shell-snippets ==> Not found
 
