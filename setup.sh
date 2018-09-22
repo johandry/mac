@@ -176,5 +176,11 @@ if [[ -e /usr/local/bin/rbenv ]] &&  ! grep -q '# DO NOT REMOVE: Ruby settings' 
   $CURL $URL/files/ruby.config >> ${HOME}/.zshrc
 fi
 
+info "Setting up Git"
+if [[ -e /usr/bin/git ]]; then
+  git config --global user.name  "Johandry Amador"
+  git config --global user.email johandry@gmail.com
+fi
+
 ok "Setup Completed"
 warn "Restore the current setup executing: brew bundle cleanup --global"
