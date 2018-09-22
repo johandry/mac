@@ -47,23 +47,11 @@ mas "Speedtest", id: 1153157709
 # Social Network
 mas "Twitter", id: 409789998
 
-# XCode and Server
-mas "Xcode", id: 497799835
-mas "Server", id: 883878097
-
 # Editor and IDE Visual Studio Code instead of Atom (cask "atom")
 cask "visual-studio-code"
 
 # Cloud Storage
-cask "box-sync"
-cask "dropbox"
 mas "OneDrive", id: 823766827
 
 # Media
 cask "vlc"
-cask "handbrake"
-cask "makemkv"
-cask "mkvtools"
-cask "subler"
-cask "sublercli"
-cask "flixtools"

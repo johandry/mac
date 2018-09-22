@@ -6,6 +6,14 @@ tap "kyoh86/tap"
 # Utils
 mas "ResolutionTab", id: 540141595
 
+# Cloud Storage
+cask "box-sync"
+cask "dropbox"
+
+# XCode and Server
+mas "Xcode", id: 497799835
+mas "Server", id: 883878097
+
 # Virtual Machines
 cask "virtualbox"
 cask "virtualbox-extension-pack"
@@ -48,4 +56,10 @@ cask "slack"
 cask "whatsapp"
 
 # Media
+cask "handbrake"
+cask "makemkv"
+cask "mkvtools"
+cask "subler"
+cask "sublercli"
+cask "flixtools"
 cask "spotify"

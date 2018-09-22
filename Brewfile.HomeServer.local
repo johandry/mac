@@ -1,4 +1,17 @@
 ## Applications to install in HomeServer.local
 
+# XCode and Server
+mas "Xcode", id: 497799835
+mas "Server", id: 883878097
+
+# Cloud Storage
+cask "dropbox"
+
 # Media
+cask "handbrake"
+cask "makemkv"
+cask "mkvtools"
+cask "subler"
+cask "sublercli"
+cask "flixtools"
 cask "plex-media-server"

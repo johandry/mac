@@ -1,0 +1,22 @@
+## Applications to install in Sofias-MacBook-Pro.local
+
+# Utils
+mas "ResolutionTab", id: 540141595
+
+# Python Development
+brew "python", link: false
+brew "python3"
+
+# Node Development
+brew "node"
+
+# Development Tools
+cask "github"
+cask "iterm2"
+
+# Communication
+cask "skype"
+cask "whatsapp"
+
+# Media
+cask "spotify"
