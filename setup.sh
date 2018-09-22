@@ -127,6 +127,14 @@ if [[ "$USER" == "johandry" ]]; then
   ln -s ${HOME}/Workspace/src/github.com/johandry ${HOME}/Workspace
 fi
 
+info "Setting up XCode"
+xcode-select --install 2>/dev/null
+
+info "Upgrading pip"
+if [[ -e /usr/local/bin/pip3 ]]; then
+  pip3 install --upgrade pip setuptools wheel
+fi
+
 info "Applying Security Settings"
 chmod g-w,o-w /usr/local/share 2>/dev/null
 

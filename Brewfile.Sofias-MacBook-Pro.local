@@ -4,7 +4,6 @@
 mas "ResolutionTab", id: 540141595
 
 # Python Development
-brew "python", link: false
 brew "python3"
 
 # Node Development
