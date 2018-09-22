@@ -86,7 +86,7 @@ brew cask uninstall google-chrome
 
 ### Visual Studio Code
 
-The VS Code Go extension require a bunch of tools installed, to install them, create a new file with a simple Go code:
+The **Go extension** require a bunch of tools installed, to install them, create a new file with a simple Go code:
 
 ```go
 package main
@@ -99,6 +99,17 @@ func main() {
 ```
 
 Save it and an alert at the bottom will ask to install all the dependencies required by the VSCode Go package. Select `All` and wait until all are installed.
+
+The default **Python interpreter** is Python 2, to select Python 3 open the **Command Palette** (⇧⌘P) and -partially - type **Python: Select Interpreter**, then select the correct Python 3 interpreter.
+
+If you don't see it in the list try to reinstall Python 3 and/or restart Visual Studio Code:
+
+```bash
+brew reinstall python3
+brew link python3
+python3 -V
+where python3
+```
 
 ### Slack
 
