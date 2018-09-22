@@ -43,6 +43,7 @@ source ~/bin/common.sh
 if [[ "${LOCAL_SETUP}" == "1" ]]; then
   CURL="cat"
   URL="${SCRIPT_DIR}"
+  [[ -z "$@" ]] && SETUP_BREWFILES="Test"
 fi
 
 info "Installing Homebrew, Homebrew Bundle"
@@ -59,6 +60,7 @@ info "Creating Brewfile"
 $CURL $URL/Brewfile.Common > Brewfile
 
 brewfiles="$@"
+[[ -n $SETUP_BREWFILES ]] && brewfiles="${brewfiles} ${SETUP_BREWFILES}"
 [[ -z $brewfiles ]] && brewfiles=$(uname -n)
 
 for f in $brewfiles; do
@@ -118,9 +120,15 @@ currentSize=$(defaults read com.apple.dock tilesize 2>/dev/null)
 
 
 info "Creating Directories"
-mkdir -p ${HOME}/Workspace/go/{bin,pkg,src/github.com/johandry,Sandbox}
+mkdir -p ${HOME}/Workspace
 mkdir -p ${HOME}/bin
-ln -s ${HOME}/Workspace/src/github.com/johandry ${HOME}/Workspace
+if [[ "$USER" == "johandry" ]]; then
+  mkdir -p ${HOME}/Workspace/{src/github.com/johandry,sandbox}
+  ln -s ${HOME}/Workspace/src/github.com/johandry ${HOME}/Workspace
+fi
+
+info "Applying Security Settings"
+chmod g-w,o-w /usr/local/share 2>/dev/null
 
 info "Setting up Zsh"
 [[ ! -e "$HOME/.oh-my-zsh/oh-my-zsh.sh" ]] && \
@@ -135,7 +143,7 @@ grep -q ${theme} ${HOME}/.zshrc || sed -i.bak "s/^ZSH_THEME=\".*\"$/${theme}/" $
 plugins='plugins=(git github osx python pip sudo go brew brew-cask colorize common-aliases docker docker-compose emoji emoji-clock vagrant aws ng npm zsh-completions kubectl)'
 grep -q "${plugins}" ${HOME}/.zshrc || sed -i.bak "s/^plugins=(.*)$/${plugins}/" ${HOME}/.zshrc
 
-if ! grep -q '# DO NOT REMOVE: Personal ZSH settings' ${HOME}/.zshrc; then 
+if ! grep -q '# DO NOT REMOVE: ZSH settings' ${HOME}/.zshrc; then 
   $CURL $URL/files/zsh.config >> ${HOME}/.zshrc
 fi
 
@@ -144,6 +152,29 @@ rm -f $HOME/.zshrc.bak
 info "Setting up Bash"
 
 [[ ! -e $HOME/.bash_profile ]] && touch $HOME/.bash_profile
-if ! grep -q '# DO NOT REMOVE: Personal Bash settings' ${HOME}/.bash_profile; then 
+if ! grep -q '# DO NOT REMOVE: Bash settings' ${HOME}/.bash_profile; then 
   $CURL $URL/files/bash.config >> ${HOME}/.bash_profile
 fi
+
+info "Setting up AWS"
+if [[ -e /usr/local/bin/aws ]] &&  ! grep -q '# DO NOT REMOVE: AWS Settings' ${HOME}/.zshrc; then 
+  $CURL $URL/files/aws.config >> ${HOME}/.zshrc
+fi
+
+info "Setting up Go"
+if [[ -e /usr/local/bin/go ]] &&  ! grep -q '# DO NOT REMOVE: Go settings' ${HOME}/.zshrc; then 
+  $CURL $URL/files/go.config >> ${HOME}/.zshrc
+fi
+
+info "Setting up Kubernetes"
+if [[ -e /usr/local/bin/kubectl ]] &&  ! grep -q '# DO NOT REMOVE: Kubernetes settings' ${HOME}/.zshrc; then 
+  $CURL $URL/files/kubernetes.config >> ${HOME}/.zshrc
+fi
+
+info "Setting up Ruby"
+if [[ -e /usr/local/bin/rbenv ]] &&  ! grep -q '# DO NOT REMOVE: Ruby settings' ${HOME}/.zshrc; then 
+  $CURL $URL/files/ruby.config >> ${HOME}/.zshrc
+fi
+
+ok "Setup Completed"
+warn "Restore the current setup executing: brew bundle cleanup --global"
