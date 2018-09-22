@@ -71,15 +71,13 @@ aws ec2 describe-key-pairs
 
 Open Google Chrome and login with your user.
 
-In the past the brew install of Chrome caused some problems every time there is a Chrome update. If it happens again, uninstall the brew cask for Chrome and install it manually
+In the past the brew install of Chrome caused some problems every time there is a Chrome update. If it happens again, uninstall the brew cask for Chrome, download it from [here](https://www.google.com/chrome/) and install it.
 
 ```bash
-brew cask uninstall
+brew cask uninstall google-chrome
 ```
 
-Download it from [here](https://www.google.com/chrome/) and install it.
-
-### Terminal and iTerm
+### Terminal
 
 1. Open **Terminal**, go to **Preferences** (&#8984; + ,), select **General** tab.
 2. Select **Pro** in **New window with profile**
