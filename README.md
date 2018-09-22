@@ -19,7 +19,7 @@ Script to automate the setup of my Mac's
    Optionally, you may set the variable `SETUP_BREWFILES` with a list of brewfiles ID's (the text after the file named `Brewfile.`), like this:
 
    ```bash
-   SETUP_BREWFILES="HomeServer.local" \
+   export SETUP_BREWFILES="HomeServer.local"
    curl -fsL http://www.johandry.com/mac/setup.sh | bash
    ```
 
