@@ -124,7 +124,7 @@ mkdir -p ${HOME}/Workspace
 mkdir -p ${HOME}/bin
 if [[ "$USER" == "johandry" ]]; then
   mkdir -p ${HOME}/Workspace/{src/github.com/johandry,sandbox}
-  ln -s ${HOME}/Workspace/src/github.com/johandry ${HOME}/Workspace
+  [[ ! -L ${HOME}/Workspace/johandry ]] && ln -s ${HOME}/Workspace/src/github.com/johandry ${HOME}/Workspace
 fi
 
 info "Setting up XCode"
