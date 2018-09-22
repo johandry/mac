@@ -4,15 +4,10 @@
 brew "awscli"
 brew "go"
 brew "python3"
-cask "github-desktop"
+cask "github"
 
 # Communication
 cask "colloquy"
 
 # Media
 cask "spotify"
-
-## Applications to install in Johandrys-MacBook-Pro.local
-
-# Media
-cask "plex-media-server"
