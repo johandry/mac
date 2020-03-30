@@ -67,7 +67,6 @@ profile=$SETUP_PROFILE
 if $CURL $URL/Profiles/Profile.$profile > Profile; then 
   info "  * Using Profile.$profile"
   cat Profile | while read b; do 
-    [[ -z "$b" || $b =~ ^#.* ]] && continue
     info "  * Getting $URL/Brewfiles/Brewfile.$b"
     if $CURL $URL/Brewfiles/Brewfile.$b >> Brewfile; then 
       info "  * Appending Brewfile.$f"
