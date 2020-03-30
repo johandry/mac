@@ -31,10 +31,10 @@ URL="http://www.johandry.com/mac"
 
 [[ ! -e "$HOME/bin/common.sh" ]] && \
   echo "~/bin/common.sh was not found, I'm installing it ..." && \
-  curl -fsL http://cs.johandry.com/install | bash
+  curl -fsL https://cs.johandry.com/install | bash
 
 [[ ! -e "$HOME/bin/common.sh" ]] && \
-  echo "~/bin/common.sh was not found, install it manually from: http://cs.johandry.com/install " && \
+  echo "~/bin/common.sh was not found, install it manually from: https://cs.johandry.com/install " && \
   exit 1
 
 source ~/bin/common.sh
