@@ -84,6 +84,7 @@ for f in $(echo $brewfiles); do
     warn "  * Not found Brewfile.$f"
   fi
 done
+rm -f Profile
 
 info "Brewing all the applications"
 brew bundle install --verbose
