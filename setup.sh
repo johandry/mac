@@ -57,6 +57,7 @@ if [[ $? -ne 0 ]]; then
 fi
 
 info "Creating Brewfile"
+rm -f .Brewfile
 $CURL $URL/Brewfiles/Brewfile.Base > Brewfile
 
 brewfiles="$@"
