@@ -76,6 +76,7 @@ else
 fi
 
 for f in `echo $brewfiles`; do
+  info " * Getting Brewfile.$f"
   if $CURL $URL/Brewfiles/Brewfile.$f >> Brewfile; then 
     info "  * Appending Brewfile.$f"
   else 
