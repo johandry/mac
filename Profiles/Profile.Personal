@@ -1,5 +1,6 @@
 ## Applications to install in personal computer
 
+Docker
 Blogging
 CloudStorage
 CloudStoragePersonal
@@ -14,7 +15,6 @@ InfrastructureCloud
 InfrastructureLocal
 Internet
 InternetSecure
-Docker
 Kubernetes
 Media
 Office
