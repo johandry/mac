@@ -58,11 +58,17 @@ Pay attention to the output of the script, there may be manual actions required.
 
 ### Docker
 
-Yes, Docker can be installed with `brew` but, as it's an critical application I prefer to install it manually, so:
+Yes, Docker is installed but it may fail, as it's an critical application double check and install it manually, so:
 
 1. Download it from [here](https://download.docker.com/mac/stable/Docker.dmg)
    *(It may be required to login first with the DockerHub user)*
 2. Install it or [follow the instructions](https://docs.docker.com/docker-for-mac/install/)
+
+### Virtual Box
+
+The Virtual Box installation may fail due to a security requirement from MacOS. If it fail the instructions will be provided during the brew install.
+
+Double check it's correctly installed, if failed or still failing download and install it from [here](https://www.virtualbox.org/wiki/Downloads).
 
 ### AWS CLI
 
