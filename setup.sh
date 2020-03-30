@@ -67,11 +67,10 @@ profile=$SETUP_PROFILE
 if $CURL $URL/Profiles/Profile.$profile > Profile; then 
   info "  * Using Profile.$profile"
   cat Profile | while read b; do 
-    info "  * Getting $URL/Brewfiles/Brewfile.$b"
     if $CURL $URL/Brewfiles/Brewfile.$b >> Brewfile; then 
-      info "  * Appending Brewfile.$f"
+      info "  * Appending Brewfiles/Brewfile.$b"
     else 
-      warn "  * Not found Brewfile.$f"
+      warn "  * Not found Brewfiles/Brewfile.$b"
     fi
   done
 else 
