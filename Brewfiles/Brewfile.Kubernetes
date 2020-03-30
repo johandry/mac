@@ -1,9 +1,12 @@
 # KubeCTL
 brew "kubernetes-cli"
 
+# OpenShiftCTL
+brew "openshift-cli"
+
 # Kubernetes clusters provisioners
 brew "kind"
-cask "minikube"
+brew "minikube"
 
 # Utils
 brew "watch"

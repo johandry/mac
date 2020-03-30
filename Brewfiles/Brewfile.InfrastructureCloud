@@ -12,4 +12,4 @@ cask "google-cloud-sdk"
 brew "azure-cli"
 
 # IBM 
-brew "ibm-cloud-cli"
+cask "ibm-cloud-cli"
