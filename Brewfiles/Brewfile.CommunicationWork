@@ -1,0 +1,4 @@
+# Working From Home
+cask "skype"
+cask "slack"
+cask "zoom"

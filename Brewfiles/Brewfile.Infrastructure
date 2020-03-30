@@ -1,0 +1,11 @@
+# Infrastructure
+
+# Terraform
+brew "terraform"
+
+# Machine Image Provisioner
+brew "packer"
+
+# Other Hashicorp tools
+brew "vault"
+brew "serf"

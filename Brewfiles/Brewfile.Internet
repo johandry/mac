@@ -1,0 +1,4 @@
+# Internet
+cask "google-chrome"
+cask "firefox"
+mas "Speedtest", id: 1153157709

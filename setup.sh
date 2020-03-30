@@ -31,7 +31,7 @@ URL="http://www.johandry.com/mac"
 
 [[ ! -e "$HOME/bin/common.sh" ]] && \
   echo "~/bin/common.sh was not found, I'm installing it ..." && \
-  curl -s http://cs.johandry.com/install | bash
+  curl -fsL http://cs.johandry.com/install | bash
 
 [[ ! -e "$HOME/bin/common.sh" ]] && \
   echo "~/bin/common.sh was not found, install it manually from: http://cs.johandry.com/install " && \
@@ -43,12 +43,12 @@ source ~/bin/common.sh
 if [[ "${LOCAL_SETUP}" == "1" ]]; then
   CURL="cat"
   URL="${SCRIPT_DIR}"
-  [[ -z "$@" ]] && SETUP_BREWFILES="Test"
+  [[ -z "$@" ]] && SETUP_PROFILE="Test"
 fi
 
 info "Installing Homebrew, Homebrew Bundle"
 [[ -z "$(command -v brew)" ]] && \
-  /usr/bin/ruby -e "$(${CURL} https://raw.githubusercontent.com/Homebrew/install/master/install)"
+  /usr/bin/ruby -e "$(curl -fsL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 brew tap Homebrew/bundle
 
 if [[ $? -ne 0 ]]; then
@@ -57,11 +57,22 @@ if [[ $? -ne 0 ]]; then
 fi
 
 info "Creating Brewfile"
-$CURL $URL/Brewfile.Common > Brewfile
+$CURL $URL/Brewfiles/Brewfile.Base > Brewfile
 
 brewfiles="$@"
 [[ -n $SETUP_BREWFILES ]] && brewfiles="${brewfiles} ${SETUP_BREWFILES}"
-[[ -z $brewfiles ]] && brewfiles=$(uname -n)
+
+profile=$SETUP_PROFILE
+[[ -z $profile ]] && profile=$(uname -n)
+if $CURL $URL/Profiles/Profile.$profile >> Profile; then 
+  info "  * Using Profile.$profile"
+  cat Profile | while read b; do
+    [[ -z "$b" ]] || [[ $b =~ ^#.* ]] && continue
+    brewfiles="${brewfiles} $b"
+  done
+else 
+  warn "  * Not found Profile.$profile"
+fi
 
 for f in $brewfiles; do
   if $CURL $URL/Brewfile.$f >> Brewfile; then 

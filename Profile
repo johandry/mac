@@ -1,0 +1,8 @@
+## Applications to install in Johandrys-MacBook-Pro.local
+
+Utils
+Development
+DevelopmentGo
+Blog_Docs
+SocialMedia
+Media

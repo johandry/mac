@@ -1,0 +1,15 @@
+# Cloud Platforms
+
+# AWS
+brew "awscli"
+brew "aws-iam-authenticator"
+brew "s3cmd"
+
+# GCP
+cask "google-cloud-sdk"
+
+# Azure
+brew "azure-cli"
+
+# IBM 
+brew "ibm-cloud-cli"

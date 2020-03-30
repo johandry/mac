@@ -1,0 +1,12 @@
+# KubeCTL
+brew "kubernetes-cli"
+
+# Kubernetes clusters provisioners
+brew "kind"
+cask "minikube"
+
+# Utils
+brew "watch"
+
+# Development of CRD
+brew "kubebuilder"

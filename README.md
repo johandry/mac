@@ -16,10 +16,11 @@ Script to automate the setup of my Mac's
    curl -fsL http://www.johandry.com/mac/setup.sh | bash
    ```
 
-   Optionally, you may set the variable `SETUP_BREWFILES` with a list of brewfiles ID's (the text after the file named `Brewfile.`), like this:
+   Optionally, you may set the variable `SETUP_BREWFILES` with a list of brewfiles ID's (the text after the file named `Brefiles/Brewfile.`), or the variable `SETUP_PROFILE` with the name of the profile to apply (they are located in `Profiles/Profiles.`) like this:
 
    ```bash
-   export SETUP_BREWFILES="HomeServer.local"
+   export SETUP_BREWFILES="Internet Office"
+   export SETUP_PROFILE="HomeServer.local"
    curl -fsL http://www.johandry.com/mac/setup.sh | bash
    ```
 
@@ -147,7 +148,7 @@ To modify the list of applications to install or modify the script, first clone 
 
 The `setup.sh` script install automatically a list of applications using [Homebrew](https://brew.sh/) and [mas-cli](https://github.com/mas-cli/mas). It will also execute other tasks such as create a Workspace directory, customize the Zsh theme and more.
 
-There is a file per Mac named with the hostname, i.e. `Brewfile.Johandrys-MacBook-Pro.local`, and the file `Brewfile.Common` with all the applications every mac should have. These Brewfiles are required by [Brew Bundle](https://github.com/Homebrew/homebrew-bundle) and they list all the applications to install. Comments starting with `#` are allow.
+There is a file per Mac named with the hostname, i.e. `Brewfile.Johandrys-MacBook-Pro.local`, and the file `Brewfile.Base` with all the applications every mac should have. These Brewfiles are required by [Brew Bundle](https://github.com/Homebrew/homebrew-bundle) and they list all the applications to install. Comments starting with `#` are allow.
 
 You can create a list of installed applications with the following command:
 
@@ -211,9 +212,9 @@ LOCAL_SETUP=1 ./setup.sh
 
 The environment variable `LOCAL_SETUP=1` use the files locally instead of getting them from GitHub.
 
-If no parameter is pass the script will use the `Brewfile.Test` brewfile instead the one with the hostname. Or, you may pass a list of brewfiles extensions (the name after `Brewfile.`) to use them, instead of `Brewfile.Test` or the one with the hostname.
+If no parameter is pass the script will use the `Profile.Test` profile instead the one with the hostname. Or, you may pass a list of brewfiles extensions (the name after `Brewfile.`) to use them.
 
-Notice that `Brewfile.Common` will always be used.
+Notice that `Brewfile.Base` will always be used.
 
 It's possible to test the script using Vagrant. Follow these steps to use OSX Setup with Vagrant:
 

@@ -1,0 +1,32 @@
+# Editor and IDE Visual Studio Code instead of Atom (cask "atom")
+cask "visual-studio-code"
+
+# Development Tools
+cask "github"
+cask "iterm2"
+
+# Bash Development
+brew "bats"
+brew "netcat"
+
+# API Development (gRPC and REST)
+brew "grpcurl"
+brew "httpie"
+cask "postman"
+
+# JSON & YAML
+brew "jq"
+brew "yq"
+
+# Local DB
+brew "sqlite"
+
+# Web Development
+mas "Sparkle", id: 863015334
+cask "figma"
+cask "figmadaemon"
+
+# Documentation
+cask "macdown"
+cask "typora"
+brew "asciinema"

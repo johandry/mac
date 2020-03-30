@@ -1,0 +1,6 @@
+# Social Media
+mas "Twitter", id: 409789998
+
+# Communication
+cask "whatsapp"
+mas "Textual IRC Client", id: 1262957439

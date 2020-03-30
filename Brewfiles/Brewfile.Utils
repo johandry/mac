@@ -1,0 +1,15 @@
+# Utils
+
+# Compact files
+brew "xz"
+mas "The Unarchiver", id: 425424353
+
+# Password Manager
+mas "1Password", id: 443987910
+
+# Windows Managers
+mas "ResolutionTab", id: 540141595
+mas "Magnet", id: 441258766
+
+# Keep your Mac awake
+brew "intelliscape-caffeine"

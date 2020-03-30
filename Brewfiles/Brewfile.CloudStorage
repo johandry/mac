@@ -1,0 +1,3 @@
+# Cloud Storage
+mas "OneDrive", id: 823766827
+cask "box-sync"

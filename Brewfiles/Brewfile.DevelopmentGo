@@ -1,0 +1,10 @@
+# Taps
+tap "kyoh86/tap"
+
+# Go Development
+brew "go"
+
+# External tools
+brew "kyoh86/tap/richgo"
+brew "graphviz"
+brew "go-bindata"

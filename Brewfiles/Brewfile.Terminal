@@ -1,0 +1,11 @@
+# Shell
+brew "bash-completion@2"
+brew "zsh-completions"
+brew "zsh-syntax-highlighting"
+
+# Utils
+brew "wget"
+brew "tree"
+brew "nmap"
+brew "imagemagick"
+brew "base64"

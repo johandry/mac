@@ -1,0 +1,8 @@
+# Media Server
+cask "handbrake"
+cask "makemkv"
+cask "mkvtools"
+cask "subler"
+cask "sublercli"
+cask "flixtools"
+cask "plex-media-server"
