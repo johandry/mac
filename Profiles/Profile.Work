@@ -9,6 +9,7 @@ Infrastructure
 InfrastructureLocal
 InfrastructureCloud
 Internet
+Docker
 Kubernetes
 Office
 Terminal

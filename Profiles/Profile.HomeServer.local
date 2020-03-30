@@ -1,6 +1,7 @@
 ## Applications to install in HomeServer.local
 
 BaseServer
+Docker
 InternetSecure
 MediaServer
 Terminal

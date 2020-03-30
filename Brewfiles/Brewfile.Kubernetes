@@ -11,5 +11,6 @@ brew "minikube"
 # Utils
 brew "watch"
 
-# Development of CRD
+# Development tools
 brew "kubebuilder"
+brew "helm"

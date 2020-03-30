@@ -14,6 +14,7 @@ InfrastructureCloud
 InfrastructureLocal
 Internet
 InternetSecure
+Docker
 Kubernetes
 Media
 Office
