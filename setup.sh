@@ -76,7 +76,7 @@ else
 fi
 
 for f in `echo $brewfiles`; do
-  if $CURL $URL/Brewfile.$f >> Brewfile; then 
+  if $CURL $URL/Brewfiles/Brewfile.$f >> Brewfile; then 
     info "  * Appending Brewfile.$f"
   else 
     warn "  * Not found Brewfile.$f"
