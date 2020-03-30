@@ -67,7 +67,7 @@ profile=$SETUP_PROFILE
 echo > Profile
 if $CURL $URL/Profiles/Profile.$profile >> Profile; then 
   info "  * Using Profile.$profile"
-  cat Profile | while read b; do
+  cat Profile | while read b; do 
     [[ -z "$b" || $b =~ ^#.* ]] && continue
     brewfiles="${brewfiles} $b"
   done
@@ -75,7 +75,7 @@ else
   warn "  * Not found Profile.$profile"
 fi
 
-for f in $brewfiles; do
+for f in `echo $brewfiles`; do
   if $CURL $URL/Brewfile.$f >> Brewfile; then 
     info "  * Appending Brewfile.$f"
   else 
