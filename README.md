@@ -24,6 +24,21 @@ Script to automate the setup of my Mac's
    curl -fsL http://www.johandry.com/mac/setup.sh | bash
    ```
 
+   To update all the brew installed applications, execute:
+
+   ```bash
+   brew update
+   brew upgrade
+   ```
+
+   All the applications were installed with Brew Bundle. To restore the system to the initial applications, execute:
+
+   ```bash
+   brew bundle cleanup --global
+   ```
+
+   You may also execute again the setup line.
+
 3. Install manually the applications that failed to install or follow the instructions that an installed program require.
 
 4. Complete the setup following the instructions from the **Manual Setup** section
