@@ -64,19 +64,21 @@ brewfiles="$@"
 
 profile=$SETUP_PROFILE
 [[ -z $profile ]] && profile=$(uname -n)
-echo > Profile
-if $CURL $URL/Profiles/Profile.$profile >> Profile; then 
+if $CURL $URL/Profiles/Profile.$profile > Profile; then 
   info "  * Using Profile.$profile"
   cat Profile | while read b; do 
     [[ -z "$b" || $b =~ ^#.* ]] && continue
-    brewfiles="${brewfiles} $b"
+    if $CURL $URL/Brewfiles/Brewfile.$b >> Brewfile; then 
+      info "  * Appending Brewfile.$f"
+    else 
+      warn "  * Not found Brewfile.$f"
+    fi
   done
 else 
   warn "  * Not found Profile.$profile"
 fi
 
-for f in `echo $brewfiles`; do
-  info " * Getting Brewfile.$f"
+for f in $(echo $brewfiles); do
   if $CURL $URL/Brewfiles/Brewfile.$f >> Brewfile; then 
     info "  * Appending Brewfile.$f"
   else 
