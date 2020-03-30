@@ -48,7 +48,7 @@ fi
 
 info "Installing Homebrew, Homebrew Bundle"
 [[ -z "$(command -v brew)" ]] && \
-  /usr/bin/ruby -e "$(curl -fsL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 brew tap Homebrew/bundle
 
 if [[ $? -ne 0 ]]; then
@@ -64,10 +64,11 @@ brewfiles="$@"
 
 profile=$SETUP_PROFILE
 [[ -z $profile ]] && profile=$(uname -n)
+echo > Profile
 if $CURL $URL/Profiles/Profile.$profile >> Profile; then 
   info "  * Using Profile.$profile"
   cat Profile | while read b; do
-    [[ -z "$b" ]] || [[ $b =~ ^#.* ]] && continue
+    [[ -z "$b" || $b =~ ^#.* ]] && continue
     brewfiles="${brewfiles} $b"
   done
 else 
