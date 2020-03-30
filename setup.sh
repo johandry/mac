@@ -138,8 +138,8 @@ info "Creating Directories"
 mkdir -p ${HOME}/Workspace
 mkdir -p ${HOME}/bin
 if [[ "$USER" == "johandry" ]]; then
-  mkdir -p ${HOME}/Workspace/{src/github.com/johandry,sandbox}
-  [[ ! -L ${HOME}/Workspace/johandry ]] && ln -s ${HOME}/Workspace/src/github.com/johandry ${HOME}/Workspace
+  mkdir -p ${HOME}/Workspace/{johandry,sandbox}
+  # [[ ! -L ${HOME}/Workspace/johandry ]] && ln -s ${HOME}/Workspace/src/github.com/johandry ${HOME}/Workspace
 fi
 
 info "Setting up XCode"
@@ -197,6 +197,11 @@ fi
 info "Setting up Ruby"
 if [[ -e /usr/local/bin/rbenv ]] &&  ! grep -q '# DO NOT REMOVE: Ruby settings' ${HOME}/.zshrc; then 
   $CURL $URL/files/ruby.config >> ${HOME}/.zshrc
+fi
+
+info "Setting up Google Cloud"
+if [[ -e /usr/local/bin/gcloud ]] &&  ! grep -q '# DO NOT REMOVE: Google Cloud settings' ${HOME}/.zshrc; then 
+  $CURL $URL/files/gcp.config >> ${HOME}/.zshrc
 fi
 
 info "Setting up Git"
