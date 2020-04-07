@@ -9,3 +9,8 @@ brew "tree"
 brew "nmap"
 brew "imagemagick"
 brew "base64"
+brew "molovo/revolver/revolver"
+
+# Fun
+brew "fortune"
+brew "cowsay"

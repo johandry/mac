@@ -164,7 +164,13 @@ $CURL $URL/files/${ZSH_THEME}.zsh-theme > ${HOME}/.oh-my-zsh/custom/themes/${ZSH
 theme="ZSH_THEME=\"${ZSH_THEME}\""
 grep -q ${theme} ${HOME}/.zshrc || sed -i.bak "s/^ZSH_THEME=\".*\"$/${theme}/" ${HOME}/.zshrc
 
-plugins='plugins=(git github osx python pip sudo go brew brew-cask colorize common-aliases docker docker-compose emoji emoji-clock vagrant aws ng npm zsh-completions kubectl)'
+# Install non standard plugins
+git clone --recursive --depth 1 https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+git clone --recursive --depth 1 https://github.com/zsh-users/zsh-apple-touchbar  ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-apple-touchbar
+git clone --recursive --depth 1 https://github.com/TamCore/autoupdate-oh-my-zsh-plugins ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/autoupdate
+git clone --recursive --depth 1 https://github.com/mattmc3/zsh-safe-rm.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/zsh-safe-rm
+
+plugins='plugins=(git github gitignore osx python pip sudo golang brew colorize zsh-autosuggestions autoupdate command-not-found common-aliases zsh-safe-rm docker docker-compose emoji emoji-clock themes vagrant aws gcloud npm npx kubectl helm minikube oc terraform cargo chucknorris zsh-apple-touchbar)'
 grep -q "${plugins}" ${HOME}/.zshrc || sed -i.bak "s/^plugins=(.*)$/${plugins}/" ${HOME}/.zshrc
 
 if ! grep -q '# DO NOT REMOVE: ZSH settings' ${HOME}/.zshrc; then 
