@@ -106,6 +106,30 @@ brew cask uninstall google-chrome
 3. Go to **Profiles** tab, select **Pro** as the default one.
 4. In the Pro profile, go to the **Window** tab, set **160** in **Columns**, and **48** in **Rows**.
 
+### iTerm
+
+1. Open **iTerm**, go to **Preferences** (&#8984; + ,)
+   - **General** > **Closing**: Uncheck all the options
+   - **Appearance** > **General**: Set Theme to `Minimal`
+   - **Profiles**
+      - **General**: Check `Advance Configuration`, then `Edit` to select:
+         - for New Windows: Set `Directory` to `~/Workspace`
+         - for New Tabs: Check `Home directory`
+         - for New Split Panes: Check `Reuse previous...`
+      - **Colors**: Change background color to `20% Gray`
+      - **Window**: Set Columns to `125` and Rows to `35`
+      - **Terminal**: Check `Unlimited scrollback` and `Silence bell`
+      - **Session**: Check `Status bar enabled`, click on `Configure Status Bar` then drag: CPU Utilization, Memory Utilization, Network, Current Dir, git state, Composer and click on `Auto-Rainbow`
+2. Split the terminal with `Cmd + Shift + D`, then `Cmd + Shift + S`, name the arrangement `2 Panels`
+3. Go to the top panel and split it with `Cmd + D`, then `Cmd + Shift + S`, name the arrangement `3 Panels`
+4. Go to **Preferences** (&#8984; + ,) > **General** > **Startup**, select `Open Default Window Arrangement`
+5. Go to **Arrangements**, select the `2 Panels` and `Set Default`
+
+Tips:
+
+- You switch between panels with `Cmd + Option + <Arrow Key>`, `Cmd + [` or  `Cmd + ]`.
+- Maximaze the active panel with `Cmd + Shift + Enter`
+
 ### Visual Studio Code
 
 The **Go extension** require a bunch of tools installed, to install them, create a new file with a simple Go code:
