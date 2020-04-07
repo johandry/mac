@@ -122,8 +122,10 @@ brew cask uninstall google-chrome
       - **Session**: Check `Status bar enabled`, click on `Configure Status Bar` then drag: CPU Utilization, Memory Utilization, Network, Current Dir, git state, Composer and click on `Auto-Rainbow`
 2. Split the terminal with `Cmd + Shift + D`, then `Cmd + Shift + S`, name the arrangement `2 Panels`
 3. Go to the top panel and split it with `Cmd + D`, then `Cmd + Shift + S`, name the arrangement `3 Panels`
-4. Go to **Preferences** (&#8984; + ,) > **General** > **Startup**, select `Open Default Window Arrangement`
-5. Go to **Arrangements**, select the `3 Panels` and `Set Default`
+4. Go to **Preferences** (&#8984; + ,) (again)
+   - **General** > **Startup**: Select `Open Default Window Arrangement`
+   - **Arrangements**: Select the `3 Panels` and `Set Default`
+   - **Appearance**: Set `Theme` to `Dark` and `Status bar location` to `Bottom`
 
 Tips:
 
