@@ -20,7 +20,7 @@ Script to automate the setup of my Mac's
 
    ```bash
    export SETUP_BREWFILES="Internet Office"
-   export SETUP_PROFILE="HomeServer.local"
+   export SETUP_PROFILE="Work" # Or "Personal"
    curl -fsL http://www.johandry.com/mac/setup.sh | bash
    ```
 
