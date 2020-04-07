@@ -168,7 +168,7 @@ grep -q ${theme} ${HOME}/.zshrc || sed -i.bak "s/^ZSH_THEME=\".*\"$/${theme}/" $
 git clone --recursive --depth 1 https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 git clone --recursive --depth 1 https://github.com/zsh-users/zsh-apple-touchbar  ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-apple-touchbar
 git clone --recursive --depth 1 https://github.com/TamCore/autoupdate-oh-my-zsh-plugins ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/autoupdate
-git clone --recursive --depth 1 https://github.com/mattmc3/zsh-safe-rm.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/zsh-safe-rm
+git clone --recursive --depth 1 https://github.com/mattmc3/zsh-safe-rm.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-safe-rm
 
 plugins='plugins=(git github gitignore osx python pip sudo golang brew colorize zsh-autosuggestions autoupdate command-not-found common-aliases zsh-safe-rm docker docker-compose emoji emoji-clock themes vagrant aws gcloud npm npx kubectl helm minikube oc terraform cargo chucknorris zsh-apple-touchbar)'
 grep -q "${plugins}" ${HOME}/.zshrc || sed -i.bak "s/^plugins=(.*)$/${plugins}/" ${HOME}/.zshrc
