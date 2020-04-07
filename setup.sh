@@ -175,11 +175,7 @@ grep -q "${plugins}" ${HOME}/.zshrc || sed -i.bak "s/^plugins=(.*)$/${plugins}/"
 
 # Persist profile setup
 zshrc_profile="export SETUP_PROFILE=\"${profile}\""
-if ! grep -q "${zshrc_profile}" ${HOME}/.zshrc; then 
-  echo "${zshrc_profile}" >> ${HOME}/.zshrc
-else
-  sed -i.bak "s/^export SETUP_PROFILE=.*$/${zshrc_profile}/" ${HOME}/.zshrc
-fi
+grep -q "${zshrc_profile}" ${HOME}/.zshrc || sed -i.bak "s/^export SETUP_PROFILE=.*$/${zshrc_profile}/" ${HOME}/.zshrc
 
 if ! grep -q '# DO NOT REMOVE: ZSH settings' ${HOME}/.zshrc; then 
   $CURL $URL/files/zsh.config >> ${HOME}/.zshrc
