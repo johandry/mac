@@ -1,8 +1,9 @@
 # Markdown
 DavidAnson.vscode-markdownlint
-AlanWalk.markdown-toc
 vstirbu.vscode-mermaid-preview
 bpruitt-goddard.mermaid-markdown-syntax-highlighting
+shd101wyy.markdown-preview-enhanced
+yzhang.markdown-all-in-one
 
 # JSON, YAML, TOML & CSV
 bungcip.better-toml
