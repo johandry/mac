@@ -123,12 +123,13 @@ brew cask uninstall google-chrome
 2. Split the terminal with `Cmd + Shift + D`, then `Cmd + Shift + S`, name the arrangement `2 Panels`
 3. Go to the top panel and split it with `Cmd + D`, then `Cmd + Shift + S`, name the arrangement `3 Panels`
 4. Go to **Preferences** (&#8984; + ,) > **General** > **Startup**, select `Open Default Window Arrangement`
-5. Go to **Arrangements**, select the `2 Panels` and `Set Default`
+5. Go to **Arrangements**, select the `3 Panels` and `Set Default`
 
 Tips:
 
 - You switch between panels with `Cmd + Option + <Arrow Key>`, `Cmd + [` or  `Cmd + ]`.
 - Maximaze the active panel with `Cmd + Shift + Enter`
+- You can close the 3rd panel with `Cmd + W`
 
 ### Visual Studio Code
 
