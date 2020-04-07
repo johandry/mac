@@ -174,7 +174,6 @@ fi
 rm -f $HOME/.zshrc.bak
 
 info "Setting up Bash"
-
 [[ ! -e $HOME/.bash_profile ]] && touch $HOME/.bash_profile
 if ! grep -q '# DO NOT REMOVE: Bash settings' ${HOME}/.bash_profile; then 
   $CURL $URL/files/bash.config >> ${HOME}/.bash_profile
@@ -203,6 +202,11 @@ fi
 info "Setting up Google Cloud"
 if [[ -e /usr/local/bin/gcloud ]] &&  ! grep -q '# DO NOT REMOVE: Google Cloud settings' ${HOME}/.zshrc; then 
   $CURL $URL/files/gcp.config >> ${HOME}/.zshrc
+fi
+
+info "Setting up IBM Cloud"
+if [[ -e /usr/local/bin/ibmcloud ]] &&  ! grep -q '# DO NOT REMOVE: IBM Clopud Settings' ${HOME}/.zshrc; then 
+  $CURL $URL/files/ibmcloud.config >> ${HOME}/.zshrc
 fi
 
 info "Setting up Git"
