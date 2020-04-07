@@ -173,6 +173,14 @@ git clone --recursive --depth 1 https://github.com/mattmc3/zsh-safe-rm.git ${ZSH
 plugins='plugins=(git github gitignore osx python pip sudo golang brew colorize zsh-autosuggestions autoupdate command-not-found common-aliases zsh-safe-rm docker docker-compose emoji emoji-clock themes vagrant aws gcloud npm npx kubectl helm minikube oc terraform cargo chucknorris zsh-apple-touchbar)'
 grep -q "${plugins}" ${HOME}/.zshrc || sed -i.bak "s/^plugins=(.*)$/${plugins}/" ${HOME}/.zshrc
 
+# Persist profile setup
+zshrc_profile="export SETUP_PROFILE=\"${profile}\""
+if ! grep -q "${zshrc_profile}" ${HOME}/.zshrc; then 
+  echo "${zshrc_profile}" >> ${HOME}/.zshrc
+else
+  sed -i.bak "s/^export SETUP_PROFILE=.*$/${zshrc_profile}/" ${HOME}/.zshrc
+fi
+
 if ! grep -q '# DO NOT REMOVE: ZSH settings' ${HOME}/.zshrc; then 
   $CURL $URL/files/zsh.config >> ${HOME}/.zshrc
 fi
