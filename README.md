@@ -149,6 +149,7 @@ Tips:
 - You switch between panels with `Cmd + Option + <Arrow Key>`, `Cmd + [` or  `Cmd + ]`.
 - Maximaze the active panel with `Cmd + Shift + Enter`
 - You can close the 3rd panel with `Cmd + W`
+- Execute this line after download all the themes: `mkdir themes; mv *.itermcolors* themes; cd themes; for f in *; do mv $f ${f%*.txt}; done`
 
 ### Visual Studio Code
 
