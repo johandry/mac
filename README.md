@@ -116,7 +116,7 @@ brew cask uninstall google-chrome
          - for New Windows: Set `Directory` to `~/Workspace`
          - for New Tabs: Check `Home directory`
          - for New Split Panes: Check `Reuse previous...`
-      - **Colors**: Change background color to `20% Gray`
+      - **Colors**: Change background color to `10% Gray`
       - **Window**: Set Columns to `125` and Rows to `35`
       - **Terminal**: Check `Unlimited scrollback` and `Silence bell`
       - **Session**: Check `Status bar enabled`, click on `Configure Status Bar` then drag: CPU Utilization, Memory Utilization, Network, Current Dir, git state, Composer and click on `Auto-Rainbow`
@@ -126,6 +126,23 @@ brew cask uninstall google-chrome
    - **General** > **Startup**: Select `Open Default Window Arrangement`
    - **Arrangements**: Select the `3 Panels` and `Set Default`
    - **Appearance**: Set `Theme` to `Dark` and `Status bar location` to `Bottom`
+5. To enable word jumps and word deletion, go to **Preferences** (&#8984; + ,) > **Profiles** > **Keys** > Load **Presents...**, select **Natural Text Editing**
+6. Go to [iTerm2 Themes](https://iterm2colorschemes.com) download the themes you like to `~/Downloads`, some suggestions are:
+   - [Brogrammer](https://raw.githubusercontent.com/mbadolato/iTerm2-Color-Schemes/master/schemes/Brogrammer.itermcolors)
+   - [Hacktober](https://raw.githubusercontent.com/mbadolato/iTerm2-Color-Schemes/master/schemes/Hacktober.itermcolors)
+   - [Harper](https://raw.githubusercontent.com/mbadolato/iTerm2-Color-Schemes/master/schemes/Harper.itermcolors)
+   - [Highway](https://raw.githubusercontent.com/mbadolato/iTerm2-Color-Schemes/master/schemes/Highway.itermcolors)
+   - [Hurtado](https://raw.githubusercontent.com/mbadolato/iTerm2-Color-Schemes/master/schemes/Hurtado.itermcolors)
+   - [Japanesque](https://raw.githubusercontent.com/mbadolato/iTerm2-Color-Schemes/master/schemes/Japanesque.itermcolors)
+   - [JetBrains Darcula](https://raw.githubusercontent.com/mbadolato/iTerm2-Color-Schemes/master/schemes/JetBrains%20Darcula.itermcolors)
+   - [Kibble](https://raw.githubusercontent.com/mbadolato/iTerm2-Color-Schemes/master/schemes/Kibble.itermcolors)
+   - [Material](https://raw.githubusercontent.com/mbadolato/iTerm2-Color-Schemes/master/schemes/Material.itermcolors)
+   - [MaterialDark](https://raw.githubusercontent.com/mbadolato/iTerm2-Color-Schemes/master/schemes/MaterialDark.itermcolors)
+   - [MaterialOcean](https://raw.githubusercontent.com/mbadolato/iTerm2-Color-Schemes/master/schemes/MaterialOcean.itermcolors)
+   - [Nocturnal Winter](https://raw.githubusercontent.com/mbadolato/iTerm2-Color-Schemes/master/schemes/Nocturnal%20Winter.itermcolors)
+7. Go to **Preferences** (&#8984; + ,) > **Profiles** > **Colors** > **Color Presets...** > **Import**:
+   - Go to the `~/Downloads` directory and select all the downloaded themes
+   - Go back to **Color Presets...** and select the theme you like the most
 
 Tips:
 
