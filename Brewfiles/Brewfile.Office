@@ -8,3 +8,4 @@ mas "Pages", id: 409201541
 # Other
 mas "MindNode", id: 992076693
 mas "1Password", id: 443987910
+cask "drawio"
