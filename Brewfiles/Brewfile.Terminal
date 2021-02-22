@@ -2,6 +2,7 @@
 brew "bash-completion@2"
 brew "zsh-completions"
 brew "zsh-syntax-highlighting"
+brew "romkatv/powerlevel10k/powerlevel10k"
 
 # Utils
 brew "wget"

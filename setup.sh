@@ -219,6 +219,11 @@ if [[ -e /usr/local/bin/ibmcloud ]] &&  ! grep -q '# DO NOT REMOVE: IBM Clopud S
   $CURL $URL/files/ibmcloud.config >> ${HOME}/.zshrc
 fi
 
+info "Setting up PowerLevel10k"
+if [[ -e /usr/local/bin/powerlevel10k ]] &&  ! grep -q '# DO NOT REMOVE: PowerLevel10k Settings' ${HOME}/.zshrc; then 
+  $CURL $URL/files/powerlevel10k.config >> ${HOME}/.zshrc
+fi
+
 info "Setting up Git"
 if [[ -e /usr/bin/git ]]; then
   git config --global user.name  "Johandry Amador"
