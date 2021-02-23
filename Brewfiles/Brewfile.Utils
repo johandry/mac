@@ -12,4 +12,4 @@ mas "ResolutionTab", id: 540141595
 mas "Magnet", id: 441258766
 
 # Keep your Mac awake
-cask "intelliscape-caffeine"
+cask "caffeine"
