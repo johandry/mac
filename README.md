@@ -180,7 +180,7 @@ where python3
 
 ### Slack
 
-Login to the following workspaces using the email address `johandry@yahoo.com`:
+Login to the following workspaces:
 
 - gophers.slack.com
 - kubernetes.slack.com
@@ -196,17 +196,17 @@ Login to the following workspaces using the email address `johandry@yahoo.com`:
 
 Open all the installed applications and make sure they are working, most of them require to accept something or require an user input. These are some of these applications:
 
-- XCode
-- Server
-- 1Password
-- Google Chrome
-- Firefox
-- Skype
-- WhatsApp
-- Slack
-- Spotify
-- Github Desktop
-- Microsoft Office Apps (Word, Excel, PowerPoint, OneNote, Outlook)
+- [ ] XCode
+- [ ] Server
+- [ ] 1Password
+- [ ] Google Chrome
+- [ ] Firefox
+- [ ] Skype
+- [ ] WhatsApp
+- [ ] Slack
+- [ ] Spotify
+- [ ] Github Desktop
+- [ ] Microsoft Office Apps (Word, Excel, PowerPoint, OneNote, Outlook)
 
 ## Development and Maintenance
 
