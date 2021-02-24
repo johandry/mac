@@ -22,9 +22,8 @@ brew "yq"
 brew "sqlite"
 
 # Web Development
-mas "Sparkle", id: 863015334
+# mas "Sparkle", id: 863015334
 cask "figma"
-cask "figmadaemon"
 
 # Documentation
 cask "macdown"
