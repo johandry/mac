@@ -230,5 +230,13 @@ if [[ -e /usr/bin/git ]]; then
   git config --global user.email johandry@gmail.com
 fi
 
+info "Setting up Vim"
+if [[ ! -d ~/.vim_runtime ]]; then 
+  git clone https://github.com/amix/vimrc.git ~/.vim_runtime
+else 
+  cd ~/.vim_runtime && git pull --rebase && cd -
+fi
+sh ~/.vim_runtime/install_awesome_vimrc.sh
+
 ok "Setup Completed"
 warn "Restore the current setup executing: brew bundle cleanup --global"

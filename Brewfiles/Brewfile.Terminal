@@ -11,6 +11,7 @@ brew "nmap"
 brew "imagemagick"
 brew "base64"
 brew "molovo/revolver/revolver"
+brew "fzf"
 
 # Fun
 brew "fortune"
