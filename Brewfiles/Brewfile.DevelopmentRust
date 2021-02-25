@@ -1,0 +1,5 @@
+# Rust Development
+brew "rust"
+
+# External tools
+brew "rustup"
