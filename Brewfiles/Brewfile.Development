@@ -30,7 +30,6 @@ brew "sqlite"
 cask "figma"
 
 # Documentation
-cask "macdown"
 cask "typora"
 brew "asciinema"
 

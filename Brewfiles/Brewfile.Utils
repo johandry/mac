@@ -9,7 +9,7 @@ mas "1Password", id: 443987910
 
 # Password Manager CLI
 brew "lastpass-cli"
-brew "1password-cli"
+cask "1password-cli"
 
 # Windows Managers
 mas "ResolutionTab", id: 540141595
