@@ -1,2 +1,5 @@
 # Node Development
 brew "node"
+
+# External tools
+brew "yarn"

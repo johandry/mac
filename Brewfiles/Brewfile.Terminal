@@ -5,14 +5,26 @@ brew "zsh-syntax-highlighting"
 brew "romkatv/powerlevel10k/powerlevel10k"
 
 # Utils
-brew "wget"
 brew "tree"
-brew "nmap"
 brew "imagemagick"
 brew "base64"
 brew "molovo/revolver/revolver"
 brew "fzf"
+brew "autojump"
+brew "grc"
+cask "flycut"
 
 # Fun
 brew "fortune"
 brew "cowsay"
+
+# GNU Utilities
+brew "findutils"
+brew "gettext"
+brew "gnu-getopt"
+brew "gnu-sed"
+
+# Networking / Internet Utilities
+brew "wget"
+brew "sshuttle"
+brew "nmap"

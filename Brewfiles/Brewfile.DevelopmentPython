@@ -1,3 +1,6 @@
 # Python Development
 brew "python3"
+
+# External tools
 brew "jupyterlab"
+brew "pyenv"
