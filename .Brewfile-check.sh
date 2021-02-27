@@ -141,6 +141,7 @@ command -v sed
 wget --version | head -1
 sshuttle --version
 nmap --version | head -1
+sshpass -V | head -1
 
 # Utils
 
