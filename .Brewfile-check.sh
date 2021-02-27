@@ -101,6 +101,9 @@ az --version
 # IBM 
 ibmcloud --version
 
+# VMware
+command -v govc
+
 # KubeCTL
 kubectl version --short --client
 

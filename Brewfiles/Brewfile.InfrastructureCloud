@@ -13,3 +13,6 @@ brew "azure-cli"
 
 # IBM 
 cask "ibm-cloud-cli"
+
+# VMware
+brew "govc"
