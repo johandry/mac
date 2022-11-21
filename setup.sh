@@ -48,7 +48,7 @@ fi
 
 info "Installing Homebrew, Homebrew Bundle"
 [[ -z "$(command -v brew)" ]] && \
-  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 brew tap Homebrew/bundle
 
 if [[ $? -ne 0 ]]; then
