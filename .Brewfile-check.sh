@@ -127,7 +127,6 @@ magick --version | head -1
 base64 --version | head -1
 revolver --version
 fzf --version
-autojump --version
 grc --version | head -1
 
 # Fun
