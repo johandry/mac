@@ -40,7 +40,7 @@ URL="https://www.johandry.com/mac"
 source ~/bin/common.sh
 
 # Default Profile
-SETUP_PROFILE='Work'
+[[ -z $SETUP_PROFILE ]] && SETUP_PROFILE='Work'
 
 # Set LOCAL_SETUP=1 to make 'setup.sh' use local files instead of gettting them from GitHub
 if [[ "${LOCAL_SETUP}" == "1" ]]; then
