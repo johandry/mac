@@ -9,8 +9,8 @@ APPLE_ID=johandry@icloud.com
 DOCK_SIZE=40
 ZSH_THEME=af-magic-clean
 
-CURL="curl -fsL"
-URL="http://www.johandry.com/mac"
+CURL="curl -fsSL"
+URL="https://www.johandry.com/mac"
 
 #=======================================================================================================
 # Author: Johandry Amador <johandry@gmail.com>
@@ -152,11 +152,11 @@ if [[ -e /usr/local/bin/pip3 ]]; then
 fi
 
 info "Applying Security Settings"
-chmod g-w,o-w /usr/local/share 2>/dev/null
+chmod -R go-w '/usr/local/share/zsh'
 
 info "Setting up Zsh"
-[[ ! -e "$HOME/.oh-my-zsh/oh-my-zsh.sh" ]] && \
-  $CURL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh | sh
+[[ -d "${HOME}/.oh-my-zsh" ]] || \
+  sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
 mkdir -p $HOME/.oh-my-zsh/custom/themes
 $CURL $URL/files/${ZSH_THEME}.zsh-theme > ${HOME}/.oh-my-zsh/custom/themes/${ZSH_THEME}.zsh-theme
@@ -229,6 +229,9 @@ if [[ -e /usr/bin/git ]]; then
   git config --global user.name  "Johandry Amador"
   git config --global user.email johandry@gmail.com
 fi
+
+info "Setting up Fuzzy Finder (fzf)"
+yes | /usr/local/opt/fzf/install
 
 info "Setting up Vim"
 if [[ ! -d ~/.vim_runtime ]]; then 
