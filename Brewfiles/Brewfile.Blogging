@@ -1,5 +1,4 @@
 # Blogging
 brew "hugo"
-cask "macdown"
-cask "typora"
+cask "obsidian"
 brew "asciinema"

@@ -30,7 +30,7 @@ brew "sqlite"
 cask "figma"
 
 # Documentation
-cask "typora"
+cask "obsidian"
 brew "asciinema"
 
 # Groovy/Jenkins Development
