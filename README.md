@@ -10,41 +10,38 @@ Script to automate the setup of my Mac's
 
 1. Login to the Apple Store with your Apple ID
 
-2. Execute:
-
-   ```bash
-   curl -fsL http://www.johandry.com/mac/setup.sh | bash
-   ```
-
-   Optionally, you may set the variable `SETUP_BREWFILES` with a list of brewfiles ID's (the text after the file named `Brefiles/Brewfile.`), or the variable `SETUP_PROFILE` with the name of the profile to apply (they are located in `Profiles/Profiles.`) like this:
+2. (Optional) Export the environment variable `SETUP_PROFILE` with the name of the profile to apply (they are located in `Profiles/Profiles.*`). You may also export the environment variable `SETUP_BREWFILES` with a list of brewfiles to install extra to those defined in the profile (the name of the brewfiles is the text after the file named `Brefiles/Brewfile.*`)
 
    ```bash
    export SETUP_BREWFILES="Internet Office"
    export SETUP_PROFILE="Work" # Or "Personal"
-   curl -fsL http://www.johandry.com/mac/setup.sh | bash
    ```
 
-   To update all the brew installed applications, execute:
+3. Execute:
 
    ```bash
-   brew update
-   brew upgrade
+   curl -fsSL https://www.johandry.com/mac/setup.sh | bash
    ```
 
-   All the applications were installed with Brew Bundle. To restore the system to the initial applications, execute:
+4. Install manually the applications that failed to install or follow the instructions that an installed program require.
 
-   ```bash
-   brew bundle cleanup --global
-   ```
-
-   You may also execute again the setup line.
-
-3. Install manually the applications that failed to install or follow the instructions that an installed program require.
-
-4. Complete the setup following the instructions from the **Manual Setup** section
+5. Complete the setup following the instructions from the **Manual Setup** section
 
 It may be required to execute again the setup script, update the Mac with Apple Store or maybe restart it.
 Pay attention to the output of the script, there may be manual actions required.
+
+To update all the brew installed applications, execute:
+
+```bash
+brew update
+brew upgrade
+```
+
+All the applications were installed with Brew Bundle. To restore the system to the initial applications execute the following command, then you can execute again the *curl-setup-bash* line:
+
+```bash
+brew bundle cleanup --global
+```
 
 ## Manual Setup
 
@@ -184,8 +181,6 @@ Login to the following workspaces:
 
 - gophers.slack.com
 - kubernetes.slack.com
-- sddevops.slack.com
-- devsecops.slack.com
 
 ### Manual Download and Install
 
@@ -246,7 +241,7 @@ code --list-extensions
 
 Then update the file `VSCode_Extensions.lst`.
 
-To remove no needed extensions, use the command:
+To remove an extension, use the command:
 
 ```bash
 code --uninstall-extension <extension_name>
