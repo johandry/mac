@@ -24,6 +24,7 @@ brew "yq"
 
 # Local DB
 brew "sqlite"
+cask "db-browser-for-sqlite"
 
 # Web Development
 # mas "Sparkle", id: 863015334
