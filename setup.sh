@@ -95,13 +95,6 @@ brew bundle install --verbose
 
 mv Brewfile ~/.Brewfile
 
-if [[ -e /usr/local/bin/code || -e /Applications/Visual\ Studio\ Code.app/Contents/MacOS/Electron ]]; then
-  info "Installing Visual Studio Extensions"
-  for ext in $($CURL $URL/VSCode_Extensions.lst | grep -v '^#' | grep -v '^$'); do
-    code --install-extension ${ext}
-  done
-fi
-
 if [[ -e /usr/local/bin/atom || -e /Applications/Atom.app/Contents/MacOS/Atom ]]; then
   info "Installing Atom packages"
   for pkg in $($CURL $URL/Atom_Packages.lst); do

@@ -1,0 +1,109 @@
+# General
+vscode "esbenp.prettier-vscode"
+vscode "ms-vscode-remote.remote-containers"
+vscode "streetsidesoftware.code-spell-checker"
+vscode "vadimcn.vscode-lldb"
+
+# Front-end Development
+vscode "chakrounanas.turbo-console-log"
+vscode "dbaeumer.vscode-eslint"
+vscode "ecmel.vscode-html-css"
+vscode "hookyqr.minify"
+vscode "ritwickdey.liveserver"
+vscode "xabikos.javascriptsnippets"
+
+# Angular
+vscode "angular.ng-template"
+
+# Dart & Flutter
+vscode "dart-code.dart-code"
+vscode "dart-code.flutter"
+
+# React
+vscode "dsznajder.es7-react-js-snippets"
+
+# Vue
+vscode "octref.vetur"
+
+# Cloud
+vscode "aws-scripting-guy.cform"
+vscode "googlecloudtools.cloudcode"
+vscode "pradiphudekar.cf-templates"
+
+# Infrastructure
+vscode "bbenoist.vagrant"
+vscode "hashicorp.hcl"
+vscode "hashicorp.terraform"
+vscode "marcostazi.vs-code-vagrantfile"
+
+# Docker
+vscode "formulahendry.docker-explorer"
+vscode "ms-azuretools.vscode-docker"
+
+# AI
+vscode "blackboxapp.blackbox"
+vscode "danielsanmedium.dscodegpt"
+
+# Documentation
+vscode "bpruitt-goddard.mermaid-markdown-syntax-highlighting"
+vscode "davidanson.vscode-markdownlint"
+vscode "shd101wyy.markdown-preview-enhanced"
+vscode "vstirbu.vscode-mermaid-preview"
+vscode "yzhang.markdown-all-in-one"
+vscode "joffreykern.markdown-toc"
+
+# Git
+vscode "donjayamanne.githistory"
+vscode "eamodio.gitlens"
+
+# VSCode Icons
+vscode "emmanuelbeziat.vscode-great-icons"
+vscode "pkief.material-icon-theme"
+
+# JSON, YAML & TOML
+vscode "eriklynd.json-tools"
+vscode "redhat.vscode-yaml"
+vscode "tamasfe.even-better-toml"
+
+# Go
+vscode "golang.go"
+
+# Viewers
+vscode "grapecity.gc-excelviewer"
+
+# API Development
+vscode "humao.rest-client"
+vscode "zxh404.vscode-proto3"
+
+# Kubernetes
+vscode "ipedrazas.kubernetes-snippets"
+vscode "ms-kubernetes-tools.vscode-kubernetes-tools"
+
+# Bash
+vscode "mads-hartmann.bash-ide-vscode"
+
+# Python & Jupyter
+vscode "ms-python.debugpy"
+vscode "ms-python.isort"
+vscode "ms-python.python"
+vscode "ms-python.vscode-pylance"
+vscode "ms-toolsai.jupyter"
+vscode "ms-toolsai.jupyter-keymap"
+vscode "ms-toolsai.jupyter-renderers"
+vscode "ms-toolsai.vscode-jupyter-cell-tags"
+vscode "ms-toolsai.vscode-jupyter-slideshow"
+
+# Automation
+vscode "ms-vscode.makefile-tools"
+
+# Database
+vscode "mtxr.sqltools"
+vscode "qwtel.sqlite-viewer"
+
+# Rust
+vscode "rust-lang.rust-analyzer"
+vscode "serayuzgur.crates"
+vscode "swellaby.rust-pack"
+
+# Swift
+vscode "sswg.swift-lang"

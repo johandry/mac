@@ -239,7 +239,7 @@ To list the existing Visual Studio Code extensions execute the command:
 code --list-extensions
 ```
 
-Then update the file `VSCode_Extensions.lst`.
+Then update the file `Brewfile.VSCode`.
 
 To remove an extension, use the command:
 
