@@ -95,13 +95,6 @@ brew bundle install --verbose
 
 mv Brewfile ~/.Brewfile
 
-if [[ -e /usr/local/bin/atom || -e /Applications/Atom.app/Contents/MacOS/Atom ]]; then
-  info "Installing Atom packages"
-  for pkg in $($CURL $URL/Atom_Packages.lst); do
-    [[ ! -d ${HOME}/.atom/packages/${pkg} ]] && apm install ${pkg}
-  done
-fi
-
 info "Resizing Dock"
 currentSize=$(defaults read com.apple.dock tilesize 2>/dev/null)
 [[ ${currentSize} -ne ${DOCK_SIZE} ]] && defaults write com.apple.dock tilesize -int ${DOCK_SIZE} && killall Dock
