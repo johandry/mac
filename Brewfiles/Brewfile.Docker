@@ -1,2 +1,3 @@
 # Docker
 cask "docker"
+brew "docker-compose"
