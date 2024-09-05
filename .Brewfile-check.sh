@@ -18,7 +18,6 @@ colordiff --version | head -1
 
 # Bash Development
 bash --version | head -1
-bats --version
 netcat --version | head -1
 
 # API Development (gRPC and REST)
@@ -53,7 +52,6 @@ rustc --version
 rustup-init --version
 
 # Python Development
-python --version
 python3 --version
 
 # External tools
@@ -122,16 +120,15 @@ kubebuilder version
 helm version
 
 # Utils
+bat --version
 tree --version
 magick --version | head -1
 base64 --version | head -1
 revolver --version
 fzf --version
-grc --version | head -1
 
 # Fun
 fortune -v
-cowsay "It's working"
 
 # GNU Utilities
 gettext --version | head -1

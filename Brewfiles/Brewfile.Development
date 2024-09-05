@@ -12,7 +12,6 @@ brew "neovim"
 
 # Bash Development
 brew "bash"
-brew "bat"
 brew "netcat"
 
 # API Development (gRPC and REST)
