@@ -3,4 +3,5 @@ brew "python3"
 
 # External tools
 brew "jupyterlab"
+brew "ipython"
 brew "pyenv"

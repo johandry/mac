@@ -1,6 +1,5 @@
 # Virtual Machines Engines
 cask "virtualbox"
-cask "virtualbox-extension-pack"
 
 # Vagrant
 cask "vagrant"

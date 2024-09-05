@@ -7,16 +7,20 @@ cask "github"
 cask "iterm2"
 brew "the_silver_searcher"
 brew "colordiff"
+brew "just"
+brew "neovim"
 
 # Bash Development
 brew "bash"
-brew "bats"
+brew "bat"
 brew "netcat"
 
 # API Development (gRPC and REST)
 brew "grpcurl"
 brew "httpie"
 cask "postman"
+brew "buf"
+brew "protobuf"
 
 # JSON & YAML
 brew "jq"

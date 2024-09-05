@@ -17,3 +17,6 @@ mas "Magnet", id: 441258766
 
 # Keep your Mac awake
 cask "caffeine"
+
+# Remote control
+cask "teamviewer"

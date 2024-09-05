@@ -2,3 +2,4 @@
 cask "skype"
 cask "slack"
 cask "zoom"
+cask "microsoft-teams"
