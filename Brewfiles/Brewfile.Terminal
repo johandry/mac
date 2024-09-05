@@ -10,12 +10,10 @@ brew "imagemagick"
 brew "base64"
 brew "molovo/revolver/revolver"
 brew "fzf"
-brew "grc"
 cask "flycut"
 
 # Fun
 brew "fortune"
-brew "cowsay"
 
 # GNU Utilities
 brew "findutils"
